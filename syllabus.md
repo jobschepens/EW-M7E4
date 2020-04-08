@@ -79,3 +79,7 @@ Getting help
 
 Datacamp is an online learning environment for learning about R, data analysis, and so on. It's currently free to use for educational institutions and I think it's a great way to learn the basics of R. There are good alternatives as well (Codeacedemy, RStudio Cloud, etc.) but I have most experience with this one. Notable other courses make use of this as well (See for example https://psych10.github.io/). Datacamp automatically creates a workspace for the course participants. The courses within the data analyst career track fit best to the learning objectives of this course. The skill tracks start with topics that are a bit too advanced and the other career tracks lean to heavily on statistics or include topics that are not part of this course such as machine learning. Within the analyst track, courses 1 to 9 are a very good coverage of the learning goals for this course, 10 to 13 are too specialist, and 14 to 19 are excellent again. Some courses from the statistics track may be mixed in. 
 
+
+# Schedule
+
+[Detailed schedule](https://jobschepens.github.io/EW-M7E4/detailedschedule.html) 
