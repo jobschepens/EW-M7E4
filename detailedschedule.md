@@ -17,7 +17,7 @@ week 3 (22.04.2020)
 
 - Introduction
 - Read: 
-	- Poldrack - Chapter 1 and 2
+	- Russel Poldrack - Chapter 1 and 2
 - Do: 
 	- 1 Introduction to R
 	- 2 Introduction to the Tidyverse
@@ -38,7 +38,7 @@ week 5 (06.05.2020)
 	- R4DS: 
 		- 2 Workflow: Grundlagen
 		- 3 Datentransformation mit dplyr
-- Homeowrk:
+- Do:
 	- 5 Cleaning Data in R
 
 week 6 (13.05.2020)
@@ -56,7 +56,7 @@ week 7 (20.05.2020)
 
 - Working with variables
 - Read:
-	- Poldrack - Chapter 3 
+	- Russel Poldrack - Chapter 3 
 - Do:
 	- 8 Exploratory Data Analysis in R
 	- 9 Case Study: Exploratory Data Analysis in R (optional)
@@ -65,7 +65,7 @@ week 8 (27.05.2020)
 
 - Visualization
 - Read:
-	- Poldrack - Chapter 4
+	- Russel Poldrack - Chapter 4
 	- R4DS: 1 Datenvisualisierung mit ggplot2
 - Do:
 	- 14 Data Visualization with ggplot2 (Part 1)
@@ -75,14 +75,25 @@ week 8 (27.05.2020)
 
 week 9 (03.06.2020)
 
-- Start of focus on statistics: Fitting models and Probability
+- Start of focus on statistics: Fitting models
 - Read:
-	- Poldrack - Chapter 5, 6
-	- Jan Vanhove: Chapters 3, 4
+	- Russel Poldrack - Chapter 5
+	- Jan Vanhove: Chapters 3
 - Do 
 	- Foundations of Probability in R
 
+
 week 10 (10.06.2020) 
+
+- Start of focus on statistics: Probability
+- Read:
+	- Russel Poldrack - Chapter 6
+	- Jan Vanhove: Chapters 4
+- Do 
+	- Foundations of Probability in R
+
+
+week 11 (17.06.2020)
 
 - Foundations 1: sampling, 
 - Read:
@@ -91,7 +102,8 @@ week 10 (10.06.2020)
 - Do: 
 	- Experimental Design in R
 
-week 11 (17.06.2020)
+
+week 12 (24.06.2020) 
 
 - Foundations 2: hypothesis testing, confidence intervals
 - Read:
@@ -100,7 +112,8 @@ week 11 (17.06.2020)
 - Do:
 	- Foundations of Inference in R 
 
-week 12 (24.06.2020) 
+
+week 13 (01.07.2020)
 
 - Inference: comparing means and proportions, chi-square test
 - Read:
@@ -109,19 +122,34 @@ week 12 (24.06.2020)
 - Do
 	- Inference for Categorical Data in R
 
-week 13 (01.07.2020)
+
+week 14 (08.07.2020)
 
 - Regression: Correlation, simple regression
 - Read:
-	- Russel Poldrack: Chapter 14, 15
+	- Russel Poldrack: Chapter 14
 	- Jan Vanhove: Teil III
 - Do:
 	- 16 Correlation and Regression in R
+
+
+week 15 (15.07.2020)
+
+- Regression: Simple regression
+- Read:
+	- Russel Poldrack: Chapter 15
+	- Jan Vanhove: Teil III
+- Do:
 	- Modeling with Data in the Tidyverse (optional)
 	- Multiple and Logistic Regression in R (optional)
 
 
-week 14 (08.07.2020)
+week 16 (22.07.2020)
+
+- Presentation of final projects (for those who choose to do a Modulpruefung)
+
+
+Bonus
 
 - Modeling
 - Read: R4DS: 
@@ -133,7 +161,7 @@ week 14 (08.07.2020)
 	- 17 Modeling with Data in the Tidyverse
 	- A special end of stats section assignment
 
-week 15 (15.07.2020)
+
 
 - Kommunizieren
 - Read
@@ -146,8 +174,3 @@ week 15 (15.07.2020)
 - Do:
 	- 19 Communicating with Data in the Tidyverse
 	- Reproducible report assignment
-
-
-week 16 (22.07.2020)
-
-- Presentation of final projects (for those who choose to do a Modulpruefung)
