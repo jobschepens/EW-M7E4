@@ -21,7 +21,7 @@ Explorative Datenauswertung in der Bildungsforschung
 - Element 4 Vertiefende Grundlagen quantitativer Erkenntnistheorie und Forschung II (4 ECTS) 
 - Study section: 3. oder 4. Semester
 - Sommer Semester 2020 
-- Time: 2 x 45 min, 10.15-11.45 (cum zeit)
+- Time: 2 x 45 min, 14.00-16.00 (cum zeit: 14.15 real start)
 - Teacher: Job Schepens
 
 ## Learning goals
