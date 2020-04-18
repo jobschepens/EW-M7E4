@@ -1,13 +1,9 @@
 ---
-title: R
+title: Explorative Datenauswertung in der Bildungsforschung
 author: Job Schepens
 date: March 30, 2020
 output: html_document
 ---
-
-Explorative Datenauswertung in der Bildungsforschung
-====================================
-
 
 # Course information
 

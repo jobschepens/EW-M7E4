@@ -1,4 +1,9 @@
-# Schedule
+---
+title: Schedule
+author: Job Schepens
+date: March 30, 2020
+output: html_document
+---
 
 week 1 (08.04.2020)  
 
