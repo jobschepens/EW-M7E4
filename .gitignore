@@ -1,0 +1,32 @@
+# Folders #
+###################
+
+
+# Compiled source #
+###################
+
+# Packages #
+############
+
+
+# Logs and databases #
+######################
+
+# OS generated files #
+######################
+
+# R things #
+######################
+*.Rproj.user
+*.Rhistory
+*.Ruserdata
+*.Rproj
+*.rdb
+*.rdx
+__globals
+__objects
+__packages
+*unnamed-chunk*
+
+# files #
+######################
