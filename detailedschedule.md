@@ -11,23 +11,24 @@
 ## Week X (15.04.2020): cancelled  
 - voluntary practicing R online
 
-## Week 1 (22.04.2020):  Introduction
+## Week 1 (22.04.2020): Introduction
 - Slides
 	- [Intro](https://jobschepens.github.io/EW-M7E4/w1-intro/w1-intro.html)
+	- [Intro](https://jobschepens.github.io/EW-M7E4/w1-intro/w1-meet-the-toolkit.html)
 - Read: 
 	- Russel Poldrack - Chapter 1 and 2
 - Datacamp: 
 	- 1 Introduction to R
 	- 2 Introduction to the Tidyverse
 
-## Week 4 (29.04.2020): Importing
+## Week 2 (29.04.2020): Importing
 - Read:
 	- Jan Vanhove - Kapitel 1 und 2 
 	- R4DS: 8 Datenimport mit readr
 - Datacamp:
 	- 3 Introduction to Importing Data in R
 
-## Week 5 (06.05.2020): Data manipulation
+## Week 3 (06.05.2020): Data manipulation
 - Read:
 	- R4DS: 
 		- 2 Workflow: Grundlagen
@@ -35,7 +36,7 @@
 - Datacamp:
 	- 5 Cleaning Data in R
 
-## Week 6 (13.05.2020): The exploratory data analysis workflow
+## Week 4 (13.05.2020): The exploratory data analysis workflow
 - Read: 
 	- R4DS: 
 		- 4 Workflow: Skripte
@@ -44,14 +45,14 @@
 - Datacamp:
 	- 6 Introduction to Data in R
 
-## Week 7 (20.05.2020): Working with variables  
+## Week 5 (20.05.2020): Working with variables  
 - Read:
 	- Russel Poldrack - Chapter 3 
 - Datacamp:
 	- 8 Exploratory Data Analysis in R
 	- 9 Case Study: Exploratory Data Analysis in R (optional)
 
-## Week 8 (27.05.2020): Visualization
+## Week 6 (27.05.2020): Visualization
 - Read:
 	- Russel Poldrack - Chapter 4
 	- R4DS: 1 Datenvisualisierung mit ggplot2
@@ -61,7 +62,7 @@
 - A special end of data section assignment
 
 
-## Week 9 (03.06.2020): Fitting models (Start of focus on statistics)
+## Week 7 (03.06.2020): Fitting models (Start of focus on statistics)
 - Read:
 	- Russel Poldrack - Chapter 5
 	- Jan Vanhove: Chapters 3
@@ -69,7 +70,7 @@
 	- Foundations of Probability in R
 
 
-## Week 10 (10.06.2020): Probability
+## Week 8 (10.06.2020): Probability
 - Read:
 	- Russel Poldrack - Chapter 6
 	- Jan Vanhove: Chapters 4
@@ -77,7 +78,7 @@
 	- Foundations of Probability in R
 
 
-## Week 11 (17.06.2020): Foundations 1 - Sampling
+## Week 9 (17.06.2020): Foundations 1 - Sampling
 - Read:
 	- Russel Poldrack: Chapters 7, (8)
 	- Jan Vanhove: Chapters 5
@@ -85,7 +86,7 @@
 	- Experimental Design in R
 
 
-## Week 12 (24.06.2020): Foundations 2 - Hypothesis testing and confidence intervals
+## Week 10 (24.06.2020): Foundations 2 - Hypothesis testing and confidence intervals
 - Read:
 	- Russel Poldrack: Chapters 9, (10)
 	- Jan Vanhove: Chapters 6
@@ -93,7 +94,7 @@
 	- Foundations of Inference in R 
 
 
-## Week 13 (01.07.2020): Inference - Comparing means and proportions and the chi-square test
+## Week 11 (01.07.2020): Inference - Comparing means and proportions and the chi-square test
 - Read:
 	- Russel Poldrack: Chapters 12, 13
 	- Jan Vanhove: Chapters 12, 13
@@ -101,7 +102,7 @@
 	- Inference for Categorical Data in R
 
 
-## Week 14 (08.07.2020): Regression 1 
+## Week 12 (08.07.2020): Regression 1 
 - Read:
 	- Russel Poldrack: Chapter 14
 	- Jan Vanhove: Teil III
@@ -109,7 +110,7 @@
 	- 16 Correlation and Regression in R
 
 
-## Week 15 (15.07.2020): Regression 2
+## Week 13 (15.07.2020): Regression 2
 - Read:
 	- Russel Poldrack: Chapter 15
 	- Jan Vanhove: Teil III
@@ -118,7 +119,7 @@
 	- Multiple and Logistic Regression in R (optional)
 
 
-## Week 16 (22.07.2020): Presentations of final projects 
+## Week 14 (22.07.2020): Presentations of final projects 
 - only for those who choose to do a Modulpruefung
 
 

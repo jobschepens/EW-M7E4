@@ -1,0 +1,228 @@
+---
+title: "Meet the toolkit <br> `r emo::ji('hammer_and_pick')`"
+author: ""
+output:
+  xaringan::moon_reader:
+    css: "../slides.css"
+    lib_dir: libs
+    nature:
+      ratio: "16:9"
+      highlightLines: true
+      highlightStyle: solarized-dark
+      countIncrementalSlides: false
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(fontawesome)
+```
+
+class: center, middle
+ 
+# Reproducible data analysis
+
+---
+
+## Reproducibility checklist
+
+.question[
+What does it mean for a data analysis to be "reproducible"?
+]
+
+--
+
+Near-term goals:
+
+- Are the tables and figures reproducible from the code and data?
+- Does the code actually do what you think it does?
+- In addition to what was done, is it clear **why** it was done? 
+(e.g., how were parameter settings chosen?)
+
+Long-term goals:
+
+- Can the code be used for other data?
+- Can you extend the code to do other things?
+
+---
+
+## Toolkit
+
+![toolkit](img/toolkit.png)
+
+- Scriptability $\rightarrow$ R
+- Literate programming (code, narrative, output in one place) $\rightarrow$ R Markdown
+- Version control $\rightarrow$ Git / GitHub
+
+---
+
+class: center, middle
+
+# R and RStudio
+
+---
+
+## What is R/RStudio?
+
+- R is a statistical programming language
+- RStudio is a convenient interface for R (an integrated development environment, IDE)
+- At its simplest:<sup>➥</sup>
+    - R is like a car’s engine
+    - RStudio is like a car’s dashboard
+
+```{r fig.align="center", echo=FALSE}
+knitr::include_graphics("img/engine-dashboard.png")
+```
+
+.footnote[
+➥ Source: [Modern Dive](https://moderndive.com/)
+]
+
+---
+
+## R essentials
+
+A short list (for now):
+
+- Functions are (most often) verbs, followed by what they will be applied to in parantheses:
+
+```{r eval=FALSE}
+do_this(to_this)
+do_that(to_this, to_that, with_those)
+```
+
+--
+
+- Columns (variables) in data frames are accessed with `$`:
+
+```{r eval=FALSE}
+dataframe$var_name
+```
+  
+--
+
+- Packages are installed with the `install.packages` function and loaded with the `library` function, once per session:
+
+```{r eval=FALSE}
+install.packages("package_name")
+library(package_name)
+```
+ 
+---
+
+## tidyverse
+
+.pull-left[
+![](img/tidyverse.png)
+]
+
+.pull-right[
+.center[
+[tidyverse.org](https://www.tidyverse.org/)
+]
+
+- The tidyverse is an opinionated collection of R packages designed for data science. 
+- All packages share an underlying philosophy and a common grammar. 
+]
+
+---
+
+class: center, middle
+
+# R Markdown
+
+---
+
+
+## R Markdown
+
+- Fully reproducible reports -- each time you knit the analysis is ran from the beginning
+- Simple markdown syntax for text
+- Code goes in chunks, defined by three backticks, narrative goes outside of chunks
+
+---
+
+## Let's take a tour - R Markdown
+
+
+.center[
+![](../img/demo.png)
+]
+
+Concepts introduced:
+
+- Copying a project of mine
+- Knitting documents
+- R Markdown and (some) R syntax
+
+---
+
+## <i class="fas fa-laptop"></i> `AE 02 - Bechdel`
+
+.question[
+What is the Bechdel test?
+]
+
+--
+
+The Bechdel test asks whether a work of fiction features at least two women who talk to each other about something other than a man, and there must be two women named characters.
+
+--
+
+<br>
+
+- Go to the [RStudio Cloud workspace](https://rstudio.cloud/project/1180772) 
+- Open and knit the R Markdown document.
+
+---
+
+## R Markdown help
+
+.pull-left[
+.center[
+[R Markdown cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+]
+![](img/rmd-cheatsheet.png)
+]
+.pull-right[
+.center[
+Markdown Quick Reference  
+`Help -> Markdown Quick Reference`
+]
+![](img/md-cheatsheet.png)
+]
+
+---
+
+## Workspaces
+
+Remember this, and expect it to bite you a few times as you're learning to work 
+with R Markdown: The workspace of your R Markdown document is separate from the Console!
+
+- Run the following in the console
+```{r eval = FALSE}
+x <- 2
+x * 3
+```
+.question[
+All looks good, eh?
+]
+
+- Then, add the following chunk in your R Markdown document
+```{r eval = FALSE}
+x * 3
+```
+.question[
+What happens? Why the error?
+]
+
+---
+
+## How will we use R Markdown?
+
+- Every assignment is an R Markdown document
+- You'll always have a template R Markdown document to start with
+- The amount of scaffolding in the template will decrease over the semester
+
