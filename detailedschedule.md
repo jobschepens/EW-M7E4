@@ -1,169 +1,136 @@
 # Schedule
 
-week 1 (08.04.2020)  
-
-- cancelled, voluntary practicing R, for example:
+## Week 1 (08.04.2020): cancelled  
+- voluntary practicing R, for example:
 	- Datacamp 
 	- Coursera
-		- https://www.coursera.org/learn/probability-intro?specialization=statistics
-		- https://www.coursera.org/learn/basic-statistics
+		- [Intro Probability](https://www.coursera.org/learn/probability-intro?specialization=statistics)
+		- [Basic Statistics](https://www.coursera.org/learn/basic-statistics)
 	- or other R resources. You can visit other MOOC platforms or check the RStudio website.  
 
-week 2 (15.04.2020) 
+## Week 2 (15.04.2020): cancelled  
+- voluntary practicing R online
 
-- cancelled, voluntary practicing R online
-
-week 3 (22.04.2020) 
-
-- Introduction
+## Week 3 (22.04.2020):  Introduction
 - Read: 
 	- Russel Poldrack - Chapter 1 and 2
-- Do: 
+- Datacamp: 
 	- 1 Introduction to R
 	- 2 Introduction to the Tidyverse
 
-week 4 (29.04.2020)
-
-- Importing
+## Week 4 (29.04.2020): Importing
 - Read:
 	- Jan Vanhove - Kapitel 1 und 2 
 	- R4DS: 8 Datenimport mit readr
-- Do:
+- Datacamp:
 	- 3 Introduction to Importing Data in R
 
-week 5 (06.05.2020)
-
-- Data manipulation
+## Week 5 (06.05.2020): Data manipulation
 - Read:
 	- R4DS: 
 		- 2 Workflow: Grundlagen
 		- 3 Datentransformation mit dplyr
-- Do:
+- Datacamp:
 	- 5 Cleaning Data in R
 
-week 6 (13.05.2020)
-
-- The exploratory data analysis workflow
+## Week 6 (13.05.2020): The exploratory data analysis workflow
 - Read: 
 	- R4DS: 
 		- 4 Workflow: Skripte
 		- 5 Explorative Datenanalyse
 		- 6 Workflow: Projekte
-- Do:
+- Datacamp:
 	- 6 Introduction to Data in R
 
-week 7 (20.05.2020)
-
-- Working with variables
+## Week 7 (20.05.2020): Working with variables  
 - Read:
 	- Russel Poldrack - Chapter 3 
-- Do:
+- Datacamp:
 	- 8 Exploratory Data Analysis in R
 	- 9 Case Study: Exploratory Data Analysis in R (optional)
 
-week 8 (27.05.2020)
-
-- Visualization
+## Week 8 (27.05.2020): Visualization
 - Read:
 	- Russel Poldrack - Chapter 4
 	- R4DS: 1 Datenvisualisierung mit ggplot2
-- Do:
+- Datacamp:
 	- 14 Data Visualization with ggplot2 (Part 1)
 	- 15 Visualization Best Practices in R (optional)
-	- A special end of data section assignment
+- A special end of data section assignment
 
 
-week 9 (03.06.2020)
-
-- Start of focus on statistics: Fitting models
+## Week 9 (03.06.2020): Fitting models (Start of focus on statistics)
 - Read:
 	- Russel Poldrack - Chapter 5
 	- Jan Vanhove: Chapters 3
-- Do 
+- Datacamp 
 	- Foundations of Probability in R
 
 
-week 10 (10.06.2020) 
-
-- Start of focus on statistics: Probability
+## Week 10 (10.06.2020): Probability
 - Read:
 	- Russel Poldrack - Chapter 6
 	- Jan Vanhove: Chapters 4
-- Do 
+- Datacamp 
 	- Foundations of Probability in R
 
 
-week 11 (17.06.2020)
-
-- Foundations 1: sampling, 
+## Week 11 (17.06.2020): Foundations 1 - Sampling
 - Read:
 	- Russel Poldrack: Chapters 7, (8)
 	- Jan Vanhove: Chapters 5
-- Do: 
+- Datacamp: 
 	- Experimental Design in R
 
 
-week 12 (24.06.2020) 
-
-- Foundations 2: hypothesis testing, confidence intervals
+## Week 12 (24.06.2020): Foundations 2 - Hypothesis testing and confidence intervals
 - Read:
 	- Russel Poldrack: Chapters 9, (10)
 	- Jan Vanhove: Chapters 6
-- Do:
+- Datacamp:
 	- Foundations of Inference in R 
 
 
-week 13 (01.07.2020)
-
-- Inference: comparing means and proportions, chi-square test
+## Week 13 (01.07.2020): Inference - Comparing means and proportions and the chi-square test
 - Read:
 	- Russel Poldrack: Chapters 12, 13
 	- Jan Vanhove: Chapters 12, 13
-- Do
+- Datacamp
 	- Inference for Categorical Data in R
 
 
-week 14 (08.07.2020)
-
-- Regression: Correlation, simple regression
+## Week 14 (08.07.2020): Regression 1 
 - Read:
 	- Russel Poldrack: Chapter 14
 	- Jan Vanhove: Teil III
-- Do:
+- Datacamp:
 	- 16 Correlation and Regression in R
 
 
-week 15 (15.07.2020)
-
-- Regression: Simple regression
+## Week 15 (15.07.2020): Regression 2
 - Read:
 	- Russel Poldrack: Chapter 15
 	- Jan Vanhove: Teil III
-- Do:
+- Datacamp:
 	- Modeling with Data in the Tidyverse (optional)
 	- Multiple and Logistic Regression in R (optional)
 
 
-week 16 (22.07.2020)
+## Week 16 (22.07.2020): Presentations of final projects 
+- only for those who choose to do a Modulpruefung
 
-- Presentation of final projects (for those who choose to do a Modulpruefung)
 
-
-Bonus
-
-- Modeling
+## Bonus 1: Modeling  
 - Read: R4DS: 
 	- R4DS: TEIL IV - Modellieren 
 		- 18 Grundlagen der Modellierung mit modelr 
 		- 19 Modelle erstellen
 		- 20 Viele Modelle mit purrr und broom (optional)
-- Do:
+- Datacamp:
 	- 17 Modeling with Data in the Tidyverse
-	- A special end of stats section assignment
+- A special end of stats section assignment
 
-
-
-- Kommunizieren
+## Bonus 2: Kommunizieren
 - Read
 	- Russel Poldrack: Chapter 17 Doing reproducible research
 	- R4DS: 
@@ -171,6 +138,6 @@ Bonus
 		- 22 Grafik für Kommunikation mit ggplot2
 		- 23 R-Markdown-Formate
 		- 24 R-Markdown-Workflow
-- Do:
+- Datacamp:
 	- 19 Communicating with Data in the Tidyverse
 	- Reproducible report assignment

@@ -1,7 +1,7 @@
 ---
 title: Explorative Datenauswertung in der Bildungsforschung
 author: Job Schepens
-date: March 30, 2020
+date: "March 30, 2020 (updated: `r Sys.Date()`)"
 output: html_document
 ---
 
@@ -34,7 +34,7 @@ Specifically, students will learn about:
 
 ## Course style
 
-Due to corona, I am expecting that the course will completely take place online. We can have regular sessions if the guidelines changes of course. We will use a platform (probably WebEx) for online seminar sessions (lectures and discussions of assignments). The idea is that these sessions have many opportunities for interaction. We will adapt the course based on the assignments. This style requires that students are able to work somewhere where they have access to a computer with internet. We will be using R instead of SPSS to do analyses. R is free and can even be run in the cloud for free so you do not have to install anything (RStudio Cloud). We will be using Moodle to host this syllabus, readings, for discussion, and getting help. It would be great when students can answer each other's questions there. Let me know if this style poses difficulties. The course is split up in two parts. The first part is focussed on getting to know R, data manipulation, and visualization. The second part focusses on statistics. The final part is about reproducible analyses. 
+Due to corona, I am expecting that the course will completely take place online. We can have regular sessions if the guidelines changes of course. We will use a platform (probably WebEx) for online seminar sessions (lectures and discussions of assignments). The idea is that these sessions have many opportunities for interaction. We will adapt the course based on the assignments. This style requires that students are able to work somewhere where they have access to a computer with internet. We will be using R instead of SPSS to do analyses. R is free and can even be run in the cloud for free so you do not have to install anything (RStudio Cloud). We will be using Moodle to host this syllabus, readings, for discussion, and getting help. It would be great when students can answer each other's questions there. Let me know if this style poses difficulties. The course is split up in two parts. The first part is focussed on getting to know R, data manipulation, and visualization. The second part focusses on statistics.
 
 
 ## Grading
@@ -48,9 +48,39 @@ This course is part of a module that will graded with a seperate Modulpruefung (
 - We will respect each other and there should be a safe learning environment for everyone. If you feel uncomfortable for any reason, contact me or the central or decentral TU Complaints Office. 
 
 
+# Learning resources
+
+There are many resources to learn how to do exploratory data analysis. Everyone has their own learning style so we will use various learning resources such as quizzes, tutorials, small group discussions, and assignments. I will provide links to these resources in the course schedule but here is an overview: 
+
+
+## Slides
+
+I will make slides available shortly before or after the seminar meeting.
+
+
+## RStudio Cloud 
+
+RStudio Cloud offers online workspaces to do exercises in or outside class without needing to install any programs or packages or download any scripts. Just login and you can work on the material that we'll discuss in the seminars. 
+
+
+## RStudio Cloud Primers
+
+[RStudio Cloud Primers](https://rstudio.cloud/learn/primers/1.1) are a small number of easily accessible online interactive tutorials to get you familiar with basic concepts. 
+
+
+## Datacamp
+
+Datacamp is a large interactive online learning environment for learning about R, data analysis, and so on. It's currently free to use for educational institutions and I think it's a great way to learn the basics of R. There are good alternatives as well (Codeacedemy, RStudio Cloud, etc.) but I have most experience with this one. Notable other courses make use of this as well (See for example the [PSYCH 10 website](https://psych10.github.io/)). Datacamp automatically creates a workspace for the course participants. The courses within the data analyst career track fit best to the learning objectives of this course. The skill tracks start with topics that are a bit too advanced and the other career tracks lean to heavily on statistics or include topics that are not part of this course such as machine learning. Within the analyst track, courses 1 to 9 are a very good coverage of the learning goals for this course, 10 to 13 are too specialist, and 14 to 19 are excellent again. Some courses from the statistics track may be mixed in. 
+
+
+## adventr
+
+[adventr](http://milton-the-cat.rocks/home/adventr.html) is an R package that contains nice interactive tutorials that run in your web browser. The tutorials start at the very beginning by teaching you interactively how to install R and what packages are and they also become quite advanced later on. The tutorials also contain quizzes. Similar tutorials can be found on [Swirl](https://swirlstats.com/)
+
+
 ## Literature 
 
-Reading is mainly optional throughout the course. Students who feel like they can benefit through reading are welcome to read. We will generally discuss the readings in the online sessions besides discussing the assignments. We will discuss selected chapters as listed in the schedule. The first book is a shorter version based on the second book. I will follow the first book during  lectures. Depending on the need I can upload parts of the books that are not freely available. 
+Reading is mainly optional throughout the course. Students who feel like they can benefit through reading are welcome to read. We will generally discuss the readings in the online sessions besides discussing tutorials and assignments. We will discuss selected chapters as listed in the schedule. The first book follows the structure of the second book but is much shorter. I will largely follow the first book during lectures. Depending on the need I can upload parts of the books that are not freely available. 
 
 - [Russel Poldrack - Statistical Thinking for the 21st Century (2020; free)](https://statsthinking21.github.io/statsthinking21-core-site/)
 - Andy Field - An adventure in statistics the reality enigma (2016)
@@ -59,29 +89,17 @@ Reading is mainly optional throughout the course. Students who feel like they ca
 - [Hadley Wickham und Garrett Grolemund - R für Data Science: Daten importieren, bereinigen, umformen, modellieren und visualisieren (2017; free)](https://katalog.ub.tu-dortmund.de/titel/ubd.lobid:HT019537930)
 - [Jan Vanhove - Statistische Grundlagen Eine Einführung mit Beispielen aus der Sprachforschung (2018; free)](https://homeweb.unifr.ch/VanhoveJ/Pub/Statistikkurs2/StatistischeGrundlagen.pdf) 
 - [OpenIntro Statistics (2019; free)](https://www.openintro.org/stat/textbook.php) 
-- Other free sources on Stanford's [PSYCH 10 course website](https://psych10.github.io/resources/)
+- [moderndive (2019; free)](https://moderndive.com/)
+- [R for cats](https://rforcats.net/): A humorous introduction to R programming
+- [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/): Quick references for many different aspects of R programming
+- [tidverse Style Guide](https://style.tidyverse.org/): Make your code beautiful and reader-friendly!
 
 
-Getting help 
+## Getting help 
 
 - Post a question on [Moodle](https://moodle.tu-dortmund.de/my/)
 - Google (type your question or problem and add r as a keyword). Google often directly finds an answered question on the question answering website [StackOverflow](https://stackoverflow.com/questions/tagged/r?tab=Frequent). 
 - Share your R environment through [RStudio Cloud](https://rstudio.cloud/)
-
-
-# Datacamp
-
-Datacamp is an online learning environment for learning about R, data analysis, and so on. It's currently free to use for educational institutions and I think it's a great way to learn the basics of R. There are good alternatives as well (Codeacedemy, RStudio Cloud, etc.) but I have most experience with this one. Notable other courses make use of this as well (See for example the [PSYCH 10 website](https://psych10.github.io/)). Datacamp automatically creates a workspace for the course participants. The courses within the data analyst career track fit best to the learning objectives of this course. The skill tracks start with topics that are a bit too advanced and the other career tracks lean to heavily on statistics or include topics that are not part of this course such as machine learning. Within the analyst track, courses 1 to 9 are a very good coverage of the learning goals for this course, 10 to 13 are too specialist, and 14 to 19 are excellent again. Some courses from the statistics track may be mixed in. 
-
-
-# adventr
-
-[adventr](http://milton-the-cat.rocks/home/adventr.html) is an R package that contains interactive tutorials that run in your web browser. The tutorials start at the very very beginning by teaching you interactively how to install R and what packages are. 
-
-
-# Slido
-
-We use [Slido](https://www.sli.do/) throughout the course for interaction during and after meetings.
 
 
 # Schedule

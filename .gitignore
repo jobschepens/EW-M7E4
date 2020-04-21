@@ -1,19 +1,6 @@
 # Folders #
 ###################
-
-
-# Compiled source #
-###################
-
-# Packages #
-############
-
-
-# Logs and databases #
-######################
-
-# OS generated files #
-######################
+libs/
 
 # R things #
 ######################
@@ -30,3 +17,4 @@ __packages
 
 # files #
 ######################
+.Rproj.user

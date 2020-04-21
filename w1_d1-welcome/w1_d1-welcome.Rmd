@@ -1,0 +1,214 @@
+---
+title: "Explorative data analysis"
+subtitle: "First session, week 3: Introduction"
+author: "Job Schepens"
+institute: "IFS, TU Dortmund"
+date: "2020/04/20 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: "../slides.css"
+    nature:
+      ratio: "16:9"
+      highlightLines: true
+      highlightStyle: solarized-light
+      countIncrementalSlides: false
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+
+```{r fig.align="center", echo=FALSE, alt="Ill", out.width="60%"}
+knitr::include_graphics("https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/r_first_then.png")
+```
+
+---
+
+## What is exploratoy data analysis?
+
+--
+
+```{r fig.align="center", echo=FALSE, alt="Pipeline", out.width="100%"}
+knitr::include_graphics("img/pipeline.png")
+```
+
+
+---
+
+# What is this course?
+
+- An introduction to exploratory data analysis (which overlaps a lot with data science and statistics)
+- All the steps in the data analysis process from beginning to end 
+  - (instead of focusing on a particular statistical method)
+
+--
+
+**Q - What background does this course assume?**  
+A - None.
+
+--
+
+**Q - Is this an intro statistics course?**  
+A - The course is practical and focuses more on data analysis and visualization but we will apply many tools from statistics. 
+
+--
+
+**Q - Do we need to program?**   
+A - Yes, we will use R instead of a point-and-click interface.
+
+---
+
+## Where can I find infor for this course?
+
+<br><br><br><br>
+
+.large[
+.center[
+Moodle and [jobschepens.github.io/EW-M7E4](https://jobschepens.github.io/EW-M7E4/syllabus.html)
+]
+]
+
+---
+
+## Who am I?
+
+.pull-left[
+```{r fig.align="center", echo=FALSE, alt="Mine", out.width="70%"}
+knitr::include_graphics("img/large.jpg.png")
+```
+]
+.pull-right[
+.midi[
+- **Email:** job.schepens@tu-dortmund.de]
+]
+
+---
+
+class: center, middle
+
+# Interesting examples of exploratory data analyses
+
+---
+
+# Text analysis of Trump's tweets
+
+```{r fig.align="center", echo=FALSE, alt="Trump tweets", out.width="63%"}
+knitr::include_graphics("img/david-robinson-trump-tweets.png")
+```
+
+David Robinson, [varianceexplained.org/r/trump-tweets](http://varianceexplained.org/r/trump-tweets)
+
+---
+
+## Voting patterns in the UN
+
+```{r echo=FALSE, alt="UN Votes", out.width="100%"}
+knitr::include_graphics("img/unvotes.png")
+```
+
+[minecr.shinyapps.io/unvotes](https://minecr.shinyapps.io/unvotes/)
+
+---
+
+## Immigrants learning Dutch as an additional language
+
+```{r echo=FALSE, alt="STEX", out.width="70%"}
+knitr::include_graphics("img/stex.png")
+```
+
+Schepens et al., in preperation
+
+---
+
+class: middle
+
+# Paired discussion
+
+- Learning to use R can be daunting 
+- Solving problems can be annoying
+- Beginning is difficult
+- Experts are intimidating
+
+```{r echo=FALSE}
+library(countdown)
+countdown(minutes = 5)
+```
+
+---
+
+
+class: middle, inverse
+
+## R + RStudio on my laptop
+
+.pull-left[
+```{r rstudio_local, echo=FALSE}
+knitr::include_graphics("img/rstudio_local.png")
+```
+]
+.pull-right[
+- Download and install R
+- Download and install RStudio
+- Install a lot of other things
+- Cry when something breaks
+- Ready to go!
+]
+
+---
+
+class: middle, inverse
+
+## R + RStudio in the cloud
+
+.pull-left[
+```{r rstudio_cloud, echo=FALSE}
+knitr::include_graphics("img/rstudio_cloud.png")
+```
+]
+.pull-right[
+- It's the same thing
+- Sign up at: https://rstudio.cloud
+- Ready to go!
+]
+
+
+---
+
+class: middle, inverse
+
+Let's try
+
+[https://rstudio.cloud/project/1174859](https://rstudio.cloud/project/1174859)
+
+
+---
+
+## Homework (due next week)
+
+- Do the pre test (see Moodle for the link)
+- Read the course syllabus [jobschepens.github.io/EW-M7E4](https://jobschepens.github.io/EW-M7E4/syllabus.html)
+- Datacamp 
+  - 1 Introduction to R
+  - 2 Introduction to the Tidyverse
+- If you have questions, try Slido (anonymous) or use the Moodle forum
+
+
+
+---
+
+## Acknowledgements
+
+<br><br><br><br>
+
+.large[
+[introds.org](https://introds.org)
+
+[djnavarro.github.io/robust-tools](https://djnavarro.github.io/robust-tools/)
+
+[psych10.github.io](https://psych10.github.io/)
+]
