@@ -13,7 +13,7 @@
 
 ## Week 1 (22.04.2020):  Introduction
 - Slides
-	- [Intro](https://jobschepens.github.io/EW-M7E4/1-intro/1-intro.html)
+	- [Intro](https://jobschepens.github.io/EW-M7E4/w1-intro/w1-intro.html)
 - Read: 
 	- Russel Poldrack - Chapter 1 and 2
 - Datacamp: 
