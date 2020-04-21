@@ -125,6 +125,37 @@ Schepens et al., in preperation
 
 ---
 
+## Online science class data
+
+```{r echo=FALSE, alt="class", out.width="70%"}
+knitr::include_graphics("https://datascienceineducation.com/07-wt-ed-ds-pipeline_files/figure-html/fig7-3-1.png")
+```
+
+Estrellado et al. (in press). Data science in education using R. Routledge.
+
+--- 
+
+
+## Aggregrate school data
+
+```{r echo=FALSE, alt="school", out.width="70%"}
+knitr::include_graphics("https://datascienceineducation.com/09-wt-aggregate-data_files/figure-html/fig9-4-1.png")
+```
+
+Estrellado et al. (in press). Data science in education using R. Routledge.
+
+---
+
+## Longitudinal data
+
+```{r echo=FALSE, alt="long", out.width="70%"}
+knitr::include_graphics("https://datascienceineducation.com/10-wt-longitudinal-analysis_files/figure-html/fig10-9-1.png")
+```
+
+Estrellado et al. (in press). Data science in education using R. Routledge.
+
+---
+
 class: middle
 
 # Paired discussion
@@ -192,10 +223,14 @@ Let's try
 
 - Do the pre test (see Moodle for the link)
 - Read the course syllabus [jobschepens.github.io/EW-M7E4](https://jobschepens.github.io/EW-M7E4/syllabus.html)
-- Datacamp 
+- Create an account on [GitHub](https://github.com/)
+- One of both:
+  - Log in on [RStudio Cloud](https://rstudio.cloud) with new credentials or with your GitHub account
+  - Install [R](https://www.r-project.org/) and [RStudio](https://rstudio.com) on your computer
+- Create an account on Datacamp (use the link on Moodle) and do:
   - 1 Introduction to R
   - 2 Introduction to the Tidyverse
-- If you have questions, try Slido (anonymous) or use the Moodle forum
+- If you have questions, try Slido (anonymous) or use the Moodle forum 
 
 
 

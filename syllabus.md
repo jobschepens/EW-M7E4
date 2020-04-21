@@ -85,15 +85,17 @@ Reading is mainly optional throughout the course. Students who feel like they ca
 - [Russel Poldrack - Statistical Thinking for the 21st Century (2020; free)](https://statsthinking21.github.io/statsthinking21-core-site/)
 - Andy Field - An adventure in statistics the reality enigma (2016)
 - Andy Field - Discovering Statistics Using R (2012)
-- [Hadley Wickham und Garrett Grolemund - R for Data Science (2017; free)](https://r4ds.had.co.nz/)
+- [Hadley Wickham and Garrett Grolemund - R for Data Science (2017; free)](https://r4ds.had.co.nz/)
 - [Hadley Wickham und Garrett Grolemund - R für Data Science: Daten importieren, bereinigen, umformen, modellieren und visualisieren (2017; free)](https://katalog.ub.tu-dortmund.de/titel/ubd.lobid:HT019537930)
 - [Jan Vanhove - Statistische Grundlagen Eine Einführung mit Beispielen aus der Sprachforschung (2018; free)](https://homeweb.unifr.ch/VanhoveJ/Pub/Statistikkurs2/StatistischeGrundlagen.pdf) 
 - [OpenIntro Statistics (2019; free)](https://www.openintro.org/stat/textbook.php) 
-- [moderndive (2019; free)](https://moderndive.com/)
+- [Ismay and Kim - Moderndive (2019; free)](https://moderndive.com/)
 - [R for cats](https://rforcats.net/): A humorous introduction to R programming
-- [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/): Quick references for many different aspects of R programming
-- [tidverse Style Guide](https://style.tidyverse.org/): Make your code beautiful and reader-friendly!
-
+- [Estrellado et al. Data Science In Education (2020; free)](https://datascienceineducation.com/)
+- [Daniele Navarro - Learning Statistics With R (2020; free)](https://learningstatisticswithr.com/)
+- [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+- [tidverse Style Guide](https://style.tidyverse.org/)
+- etc.
 
 ## Getting help 
 
