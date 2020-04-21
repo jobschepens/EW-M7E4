@@ -1,0 +1,10 @@
+---
+title: "Acknowledgements"
+output: html_document
+---
+
+- [introds.org](https://introds.org)
+
+- [djnavarro.github.io/robust-tools](https://djnavarro.github.io/robust-tools/)
+
+- [psych10.github.io](https://psych10.github.io/)

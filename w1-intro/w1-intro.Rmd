@@ -42,9 +42,10 @@ knitr::include_graphics("img/pipeline.png")
 
 # What is this course?
 
-- An introduction to exploratory data analysis (which overlaps a lot with data science and statistics)
+- An introduction to exploratory data analysis 
+- (which overlaps a lot with data science and statistics)
 - All the steps in the data analysis process from beginning to end 
-  - (instead of focusing on a particular statistical method)
+- (instead of focusing on a particular statistical method)
 
 --
 
@@ -95,35 +96,7 @@ class: center, middle
 
 ---
 
-# Text analysis of Trump's tweets
 
-```{r fig.align="center", echo=FALSE, alt="Trump tweets", out.width="63%"}
-knitr::include_graphics("img/david-robinson-trump-tweets.png")
-```
-
-David Robinson, [varianceexplained.org/r/trump-tweets](http://varianceexplained.org/r/trump-tweets)
-
----
-
-## Voting patterns in the UN
-
-```{r echo=FALSE, alt="UN Votes", out.width="100%"}
-knitr::include_graphics("img/unvotes.png")
-```
-
-[minecr.shinyapps.io/unvotes](https://minecr.shinyapps.io/unvotes/)
-
----
-
-## Immigrants learning Dutch as an additional language
-
-```{r echo=FALSE, alt="STEX", out.width="70%"}
-knitr::include_graphics("img/stex.png")
-```
-
-Schepens et al., in preperation
-
----
 
 ## Online science class data
 
@@ -156,6 +129,36 @@ Estrellado et al. (in press). Data science in education using R. Routledge.
 
 ---
 
+# Text analysis of Trump's tweets
+
+```{r fig.align="center", echo=FALSE, alt="Trump tweets", out.width="63%"}
+knitr::include_graphics("img/david-robinson-trump-tweets.png")
+```
+
+David Robinson, [varianceexplained.org/r/trump-tweets](http://varianceexplained.org/r/trump-tweets)
+
+---
+
+## Voting patterns in the UN
+
+```{r echo=FALSE, alt="UN Votes", out.width="100%"}
+knitr::include_graphics("img/unvotes.png")
+```
+
+[minecr.shinyapps.io/unvotes](https://minecr.shinyapps.io/unvotes/)
+
+---
+
+## Immigrants learning Dutch as an additional language
+
+```{r echo=FALSE, alt="STEX", out.width="70%"}
+knitr::include_graphics("img/stex.png")
+```
+
+Schepens et al., in preperation
+
+---
+
 class: middle
 
 # Paired discussion
@@ -175,7 +178,7 @@ countdown(minutes = 5)
 
 class: middle, inverse
 
-## R + RStudio on my laptop
+## R + RStudio installed locally on a laptop
 
 .pull-left[
 ```{r rstudio_local, echo=FALSE}
@@ -185,16 +188,15 @@ knitr::include_graphics("img/rstudio_local.png")
 .pull-right[
 - Download and install R
 - Download and install RStudio
-- Install a lot of other things
-- Cry when something breaks
-- Ready to go!
+- Install some packages
+- Manually keep everything up to date every now and then
 ]
 
 ---
 
 class: middle, inverse
 
-## R + RStudio in the cloud
+## R + RStudio installed in the cloud
 
 .pull-left[
 ```{r rstudio_cloud, echo=FALSE}
@@ -202,12 +204,11 @@ knitr::include_graphics("img/rstudio_cloud.png")
 ```
 ]
 .pull-right[
-- It's the same thing
+- The same functionality as local installation
 - Sign up at: https://rstudio.cloud
-- Ready to go!
 ]
 
-
+ 
 ---
 
 class: middle, inverse
@@ -223,9 +224,8 @@ Let's try
 
 - Do the pre test (see Moodle for the link)
 - Read the course syllabus [jobschepens.github.io/EW-M7E4](https://jobschepens.github.io/EW-M7E4/syllabus.html)
-- Create an account on [GitHub](https://github.com/)
 - One of both:
-  - Log in on [RStudio Cloud](https://rstudio.cloud) with new credentials or with your GitHub account
+  - Log in on [RStudio Cloud](https://rstudio.cloud) with new credentials or with a [GitHub](https://github.com/) account
   - Install [R](https://www.r-project.org/) and [RStudio](https://rstudio.com) on your computer
 - Create an account on Datacamp (use the link on Moodle) and do:
   - 1 Introduction to R

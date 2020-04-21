@@ -1,6 +1,6 @@
 # Schedule
 
-## Week 1 (08.04.2020): cancelled  
+## Week NA (08.04.2020): cancelled  
 - voluntary practicing R, for example:
 	- Datacamp 
 	- Coursera
@@ -8,10 +8,12 @@
 		- [Basic Statistics](https://www.coursera.org/learn/basic-statistics)
 	- or other R resources. You can visit other MOOC platforms or check the RStudio website.  
 
-## Week 2 (15.04.2020): cancelled  
+## Week X (15.04.2020): cancelled  
 - voluntary practicing R online
 
-## Week 3 (22.04.2020):  Introduction
+## Week 1 (22.04.2020):  Introduction
+- Slides
+	- [Intro](https://jobschepens.github.io/EW-M7E4/1-intro/1-intro.html)
 - Read: 
 	- Russel Poldrack - Chapter 1 and 2
 - Datacamp: 
