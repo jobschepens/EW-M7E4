@@ -18,8 +18,8 @@
 - Read: 
 	- Russel Poldrack - Chapter 1 and 2
 - Datacamp: 
-	- 1 Introduction to R
-	- 2 Introduction to the Tidyverse
+	- [1 Introduction to R](https://learn.datacamp.com/courses/free-introduction-to-r)
+	- [2 Introduction to the Tidyverse](https://learn.datacamp.com/courses/introduction-to-the-tidyverse)
 
 ## Week 2 (29.04.2020): Importing
 - Read:
