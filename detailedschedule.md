@@ -21,27 +21,33 @@
 	- [1 Introduction to R](https://learn.datacamp.com/courses/free-introduction-to-r)
 	- [2 Introduction to the Tidyverse](https://learn.datacamp.com/courses/introduction-to-the-tidyverse)
 
-## Week 2 (29.04.2020): Importing
+## Week 2 (29.04.2020): Intro to ggplot and dplyr
+- Slides
+	- [1](https://jobschepens.github.io/EW-M7E4/w1-intro/w2-data-and-viz.html)
 - Read:
-	- Jan Vanhove - Kapitel 1 und 2 
-	- R4DS: 8 Datenimport mit readr
+	- R4DS: 
+		- 1 & 2 Intro
+		- 3 Data Visualization
 - Datacamp:
+	- Data Visualization with ggplot2 (Part 1)
 	- 3 Introduction to Importing Data in R
+- Tutorial
+	- 
 
 ## Week 3 (06.05.2020): Data manipulation
 - Read:
 	- R4DS: 
-		- 2 Workflow: Grundlagen
-		- 3 Datentransformation mit dplyr
+		- 4 Workflow: basics
+		- 5 Data transformation
 - Datacamp:
 	- 5 Cleaning Data in R
 
 ## Week 4 (13.05.2020): The exploratory data analysis workflow
 - Read: 
 	- R4DS: 
-		- 4 Workflow: Skripte
-		- 5 Explorative Datenanalyse
-		- 6 Workflow: Projekte
+		- 6 Workflow: scripts
+		- 7 Exploratory data analysis
+		- 8 Workflow: projects
 - Datacamp:
 	- 6 Introduction to Data in R
 
@@ -52,10 +58,9 @@
 	- 8 Exploratory Data Analysis in R
 	- 9 Case Study: Exploratory Data Analysis in R (optional)
 
-## Week 6 (27.05.2020): Visualization
+## Week 6 (27.05.2020): More visualization
 - Read:
 	- Russel Poldrack - Chapter 4
-	- R4DS: 1 Datenvisualisierung mit ggplot2
 - Datacamp:
 	- 14 Data Visualization with ggplot2 (Part 1)
 	- 15 Visualization Best Practices in R (optional)
