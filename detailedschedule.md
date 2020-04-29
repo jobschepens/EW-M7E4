@@ -23,7 +23,7 @@
 
 ## Week 2 (29.04.2020): Intro to ggplot and dplyr
 - Slides
-	- [1](https://jobschepens.github.io/EW-M7E4/w1-intro/w2-data-and-viz.html)
+	- [1](https://jobschepens.github.io/EW-M7E4/w2-data-and-viz//w2-data-and-viz.html)
 - Read:
 	- R4DS: 
 		- 1 & 2 Intro
