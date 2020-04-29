@@ -13,13 +13,14 @@ output:
 
 ```{r child = "../setup.Rmd"}
 ```
- 
+
 ```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
 library(emo)
 library(tidyverse)
 library(fontawesome)
 library(magick)
 ```
+
 
 class: center, middle
 
