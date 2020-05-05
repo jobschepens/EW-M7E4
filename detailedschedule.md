@@ -29,8 +29,8 @@
 		- 1 & 2 Intro
 		- 3 Data Visualization
 - Datacamp:
-	- Data Visualization with ggplot2 (Part 1)
-	- 3 Introduction to Importing Data in R
+	- 6 Data Visualization with ggplot2 (Part 1)
+	- 9 Introduction to Importing Data in R
 
 ## Week 3 (06.05.2020): Data manipulation
 - Slides
@@ -40,7 +40,7 @@
 		- 4 Workflow: basics
 		- 5 Data transformation
 - Datacamp:
-	- 5 Cleaning Data in R
+	- 4 Data Manipulation with dplyr
 - Lab
 	- [Create a Markdown document](https://jobschepens.github.io/EW-M7E4/labs/lab1/lab-01-hello-r.html) in [RStudio Cloud](https://rstudio.cloud/project/1240390)
 	- [Visualize a university graduate questionnaire](https://jobschepens.github.io/EW-M7E4/labs/lab2/lab-02-data-wrangle-visualize.html) in [RStudio Cloud](https://rstudio.cloud/project/1240560)
@@ -52,22 +52,24 @@
 		- 7 Exploratory data analysis
 		- 8 Workflow: projects
 - Datacamp:
-	- 6 Introduction to Data in R
+	- 11 Data cleaning Data in R 
+	- 12 Exploratory Data Analysis in R
 
 ## Week 5 (20.05.2020): Working with variables  
 - Read:
 	- Russel Poldrack - Chapter 3 
 - Datacamp:
-	- 8 Exploratory Data Analysis in R
-	- 9 Case Study: Exploratory Data Analysis in R (optional)
+	- 13 Case Study: Exploratory Data Analysis in R 
 
 ## Week 6 (27.05.2020): More visualization
 - Read:
 	- Russel Poldrack - Chapter 4
 - Datacamp:
-	- 14 Data Visualization with ggplot2 (Part 1)
-	- 15 Visualization Best Practices in R (optional)
+	- Data Visualization with ggplot2 (Part 2)
+	- Visualization Best Practices in R 
 - A special end of data section assignment
+
+
 
 
 ## Week 7 (03.06.2020): Fitting models (Start of focus on statistics)
