@@ -21,7 +21,7 @@
 	- [1 Introduction to R](https://learn.datacamp.com/courses/free-introduction-to-r)
 	- [2 Introduction to the Tidyverse](https://learn.datacamp.com/courses/introduction-to-the-tidyverse)
 
-## Week 2 (29.04.2020): Intro to ggplot and dplyr
+## Week 2 (29.04.2020): Intro to ggplot
 - Slides
 	- [1](https://jobschepens.github.io/EW-M7E4/w2-data-and-viz/w2-data-and-viz.html)
 - Read:
@@ -31,16 +31,19 @@
 - Datacamp:
 	- Data Visualization with ggplot2 (Part 1)
 	- 3 Introduction to Importing Data in R
-- Tutorial
-	- 
 
 ## Week 3 (06.05.2020): Data manipulation
+- Slides
+	- [1](https://jobschepens.github.io/EW-M7E4/w3-tidy-data-wrangle/w3-tidy-data-wrangle.html)
 - Read:
 	- R4DS: 
 		- 4 Workflow: basics
 		- 5 Data transformation
 - Datacamp:
 	- 5 Cleaning Data in R
+- Lab
+	- [Create a Markdown document](https://jobschepens.github.io/EW-M7E4/labs/lab1/lab-01-hello-r.html) in [RStudio Cloud](https://rstudio.cloud/project/1240390)
+	- [Visualize a university graduate questionnaire](https://jobschepens.github.io/EW-M7E4/labs/lab2/lab-02-data-wrangle-visualize.html) in [RStudio Cloud](https://rstudio.cloud/project/1240560)
 
 ## Week 4 (13.05.2020): The exploratory data analysis workflow
 - Read: 

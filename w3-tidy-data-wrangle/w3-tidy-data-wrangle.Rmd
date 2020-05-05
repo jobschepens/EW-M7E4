@@ -6,6 +6,7 @@ output:
     css: "../slides.css"
     lib_dir: libs
     nature:
+      ratio: "16:9"
       highlightLines: true
       highlightStyle: solarized-dark
       countIncrementalSlides: false
@@ -17,6 +18,8 @@ output:
 ```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(emo)
+library(devtools)
+# install_github("rstudio-education/dsbox")
 library(dsbox)
 ```
 
@@ -412,6 +415,6 @@ ncbikecrash %>%
 
 ## <i class="fas fa-laptop"></i> `AE 04 - NC bike crashes`
 
-- Go to the course GitHub organization and clone the repo for this application exercise
+- Click here to go to [RStudio Cloud](https://rstudio.cloud/project/1240327) and open the application exercise
 - For each question you work on, set the `eval` chunk option to `TRUE` and knit
 
