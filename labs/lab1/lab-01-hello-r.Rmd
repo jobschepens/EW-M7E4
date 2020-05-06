@@ -89,7 +89,7 @@ The data frame we will be working with today is called `datasaurus_dozen` and it
 
 To find out more about the dataset, type the following in your Console: `?datasaurus_dozen`. A question mark before the name of an object will always bring up its help file. This command must be ran in the Console.
 
-1. Based on the help file, how many rows and how many columns does the `datasaurus_dozen` file have? What are the variables included in the data frame? Add your responses to your lab report. When you're done, commit your changes with the commit message "Added answer for Ex 1", and push.
+1. Based on the help file, how many rows and how many columns does the `datasaurus_dozen` file have? What are the variables included in the data frame? Add your responses to your lab report.
 
 Let's take a look at what these datasets are. To do so we can make a *frequency table* of the dataset variable:
 
