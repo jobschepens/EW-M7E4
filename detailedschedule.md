@@ -43,27 +43,29 @@
 	- 4 Data Manipulation with dplyr
 - Lab
 	- [Create a Markdown document](https://jobschepens.github.io/EW-M7E4/labs/lab1/lab-01-hello-r.html) in [RStudio Cloud](https://rstudio.cloud/project/1240390)
+
+## Week 4 (13.05.2020): Data manipulation lab 
+- Read:
+	- [6 Workflow: scripts](https://r4ds.had.co.nz/workflow-scripts.html)
+	- [8 Workflow: projects](https://r4ds.had.co.nz/workflow-projects.html)
+- Datacamp:
+	- [11 Data cleaning Data in R](https://learn.datacamp.com/courses/data-cleaning-in-r)
+- Lab
+	- [NYC bike crashes in RStudio Cloud](https://rstudio.cloud/project/1240327)
 	- [Visualize a university graduate questionnaire](https://jobschepens.github.io/EW-M7E4/labs/lab2/lab-02-data-wrangle-visualize.html) in [RStudio Cloud](https://rstudio.cloud/project/1240560)
 
-## Week 4 (13.05.2020): The exploratory data analysis workflow
-- Read: 
-	- R4DS: 
-		- 6 Workflow: scripts
-		- 7 Exploratory data analysis
-		- 8 Workflow: projects
-- Datacamp:
-	- 11 Data cleaning Data in R 
-	- 12 Exploratory Data Analysis in R
 
-## Week 5 (20.05.2020): Working with variables  
+## Week 5 (20.05.2020): The exploratory data analysis workflow 
 - Read:
-	- Russel Poldrack - Chapter 3 
+	- [Russel Poldrack - Chapter 3](https://statsthinking21.github.io/statsthinking21-core-site/summarizing-data.html) 
+	- [Russel Poldrack - Chapter 4](https://statsthinking21.github.io/statsthinking21-core-site/data-visualization.html) 
 - Datacamp:
+	- 12 Exploratory Data Analysis in R
 	- 13 Case Study: Exploratory Data Analysis in R 
 
 ## Week 6 (27.05.2020): More visualization
 - Read:
-	- Russel Poldrack - Chapter 4
+	- [7 Exploratory data analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html)
 - Datacamp:
 	- Data Visualization with ggplot2 (Part 2)
 	- Visualization Best Practices in R 

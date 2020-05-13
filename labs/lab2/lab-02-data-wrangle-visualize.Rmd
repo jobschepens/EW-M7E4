@@ -252,7 +252,7 @@ college_recent_grads %>%
 
 5. Based on the shape of the histogram you created in the 
 previous exercise, determine which of these summary statistics is useful 
-for describing the distribution. Write up your description (remember 
+for describing the distribution. Write up your description (talk about
 shape, center, spread, any unusual observations) and include the summary 
 statistic output as well.
 
