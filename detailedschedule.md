@@ -59,6 +59,8 @@
 - Slides
 	- [1](https://jobschepens.github.io/EW-M7E4/w5-1-vis/w5-effective-data-viz.html)
 	- [2](https://jobschepens.github.io/EW-M7E4/w5-2-paradox/w5-confounding-simpsons-paradox.html)
+	- [3](https://jobschepens.github.io/EW-M7E4/w5-3-coding-style/w5-coding-style.html)
+	- [4](https://jobschepens.github.io/EW-M7E4/w5-4-data-class-type-recode/w5-data-class-type-recode.html)
 - Read:
 	- [Russel Poldrack - Chapter 3](https://statsthinking21.github.io/statsthinking21-core-site/summarizing-data.html) 
 	- [Russel Poldrack - Chapter 4](https://statsthinking21.github.io/statsthinking21-core-site/data-visualization.html) 
