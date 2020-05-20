@@ -65,8 +65,8 @@
 	- [Russel Poldrack - Chapter 3](https://statsthinking21.github.io/statsthinking21-core-site/summarizing-data.html) 
 	- [Russel Poldrack - Chapter 4](https://statsthinking21.github.io/statsthinking21-core-site/data-visualization.html) 
 - Datacamp:
-	- 12 Exploratory Data Analysis in R
-	- 13 Case Study: Exploratory Data Analysis in R 
+	- [12 Exploratory Data Analysis in R](https://learn.datacamp.com/courses/exploratory-data-analysis-in-r)
+	- [13 Case Study: Exploratory Data Analysis in R - Optional](https://learn.datacamp.com/courses/case-study-exploratory-data-analysis-in-r)
 
 ## Week 6 (27.05.2020): More visualization
 - Read:
