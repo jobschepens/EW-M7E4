@@ -13,8 +13,8 @@
 
 ## Week 1 (22.04.2020): Introduction
 - Slides
-	- [1](https://jobschepens.github.io/EW-M7E4/w1-intro/w1-intro.html)
-	- [2](https://jobschepens.github.io/EW-M7E4/w1-intro/w1-meet-the-toolkit.html)
+	- [1](https://jobschepens.github.io/EW-M7E4/slides/w1-intro/w1-intro.html)
+	- [2](https://jobschepens.github.io/EW-M7E4/slides/w1-intro/w1-meet-the-toolkit.html)
 - Read: 
 	- Russel Poldrack - Chapter 1 and 2
 - Datacamp: 
@@ -23,7 +23,7 @@
 
 ## Week 2 (29.04.2020): Intro to ggplot
 - Slides
-	- [1](https://jobschepens.github.io/EW-M7E4/w2-data-and-viz/w2-data-and-viz.html)
+	- [1](https://jobschepens.github.io/EW-M7E4/slides/w2-data-and-viz/w2-data-and-viz.html)
 - Read:
 	- R4DS: 
 		- 1 & 2 Intro
@@ -34,7 +34,7 @@
 
 ## Week 3 (06.05.2020): Data manipulation
 - Slides
-	- [1](https://jobschepens.github.io/EW-M7E4/w3-tidy-data-wrangle/w3-tidy-data-wrangle.html)
+	- [1](https://jobschepens.github.io/EW-M7E4/slides/w3-tidy-data-wrangle/w3-tidy-data-wrangle.html)
 - Read:
 	- R4DS: 
 		- 4 Workflow: basics
@@ -57,10 +57,10 @@
 
 ## Week 5 (20.05.2020): The exploratory data analysis workflow 
 - Slides
-	- [1](https://jobschepens.github.io/EW-M7E4/w5-1-vis/w5-effective-data-viz.html)
-	- [2](https://jobschepens.github.io/EW-M7E4/w5-2-paradox/w5-confounding-simpsons-paradox.html)
-	- [3](https://jobschepens.github.io/EW-M7E4/w5-3-coding-style/w5-coding-style.html)
-	- [4](https://jobschepens.github.io/EW-M7E4/w5-4-data-class-type-recode/w5-data-class-type-recode.html)
+	- [1](https://jobschepens.github.io/EW-M7E4/slides/w5-1-vis/w5-effective-data-viz.html)
+	- [2](https://jobschepens.github.io/EW-M7E4/slides/w5-2-paradox/w5-confounding-simpsons-paradox.html)
+	- [3](https://jobschepens.github.io/EW-M7E4/slides/w5-3-coding-style/w5-coding-style.html)
+	- [4](https://jobschepens.github.io/EW-M7E4/slides/w5-4-data-class-type-recode/w5-data-class-type-recode.html)
 - Read:
 	- [Russel Poldrack - Chapter 3](https://statsthinking21.github.io/statsthinking21-core-site/summarizing-data.html) 
 	- [Russel Poldrack - Chapter 4](https://statsthinking21.github.io/statsthinking21-core-site/data-visualization.html) 
