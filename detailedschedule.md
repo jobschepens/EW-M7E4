@@ -35,25 +35,24 @@
 ## Week 3 (06.05.2020): Data manipulation
 - Slides
 	- [1](https://jobschepens.github.io/EW-M7E4/slides/w3-tidy-data-wrangle/w3-tidy-data-wrangle.html)
+- Lab
+	- [Create a Markdown document](https://jobschepens.github.io/EW-M7E4/labs/lab1/lab-01-hello-r.html) in [RStudio Cloud](https://rstudio.cloud/project/1240390)
 - Read:
 	- R4DS: 
 		- 4 Workflow: basics
 		- 5 Data transformation
 - Datacamp:
 	- 4 Data Manipulation with dplyr
-- Lab
-	- [Create a Markdown document](https://jobschepens.github.io/EW-M7E4/labs/lab1/lab-01-hello-r.html) in [RStudio Cloud](https://rstudio.cloud/project/1240390)
 
 ## Week 4 (13.05.2020): Data manipulation lab 
+- Lab
+	- [NYC bike crashes in RStudio Cloud](https://rstudio.cloud/project/1240327)
+	- [Visualize a university graduate questionnaire](https://jobschepens.github.io/EW-M7E4/labs/lab2/lab-02-data-wrangle-visualize.html) in [RStudio Cloud](https://rstudio.cloud/project/1240560)
 - Read:
 	- [6 Workflow: scripts](https://r4ds.had.co.nz/workflow-scripts.html)
 	- [8 Workflow: projects](https://r4ds.had.co.nz/workflow-projects.html)
 - Datacamp:
 	- [11 Data cleaning Data in R](https://learn.datacamp.com/courses/data-cleaning-in-r)
-- Lab
-	- [NYC bike crashes in RStudio Cloud](https://rstudio.cloud/project/1240327)
-	- [Visualize a university graduate questionnaire](https://jobschepens.github.io/EW-M7E4/labs/lab2/lab-02-data-wrangle-visualize.html) in [RStudio Cloud](https://rstudio.cloud/project/1240560)
-
 
 ## Week 5 (20.05.2020): The exploratory data analysis workflow 
 - Slides
@@ -71,13 +70,12 @@
 ## Week 6 (27.05.2020): More visualization
 - Read:
 	- [7 Exploratory data analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html)
+- Lab 
+	- [Simpsons Paradox](https://jobschepens.github.io/EW-M7E4/labs/lab3/lab3-simpsons-paradox.html)
 - Datacamp:
 	- Data Visualization with ggplot2 (Part 2)
 	- Visualization Best Practices in R 
 - A special end of data section assignment
-
-
-
 
 ## Week 7 (03.06.2020): Fitting models (Start of focus on statistics)
 - Read:
