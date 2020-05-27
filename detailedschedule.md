@@ -76,8 +76,8 @@
 - Read:
 	- [7 Exploratory data analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html)
 - Datacamp:
-	- Data Visualization with ggplot2 (Part 2)
-	- Visualization Best Practices in R 
+	- (Visualization Best Practices in R)[https://learn.datacamp.com/courses/visualization-best-practices-in-r]
+	- Data Visualization with ggplot2 (Part 2) (very advanced and very optional)
 - A special end of data section assignment
 	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key-tufte.html) and [starter Rmd file](https://github.com/jobschepens/EW-M7E4/blob/master/exams/exam-01/exam-01-key-tufte.Rmd)
 

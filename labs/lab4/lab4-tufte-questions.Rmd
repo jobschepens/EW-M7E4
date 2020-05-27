@@ -1,5 +1,5 @@
 ---
-title: "Lab 4 - Test Exam - NYC flights"
+title: "Lab 4 - Test Assignment - NYC flights"
 subtitle: "TU Dortmund SoSe20 - Exploratory Data Analysis"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output: 
@@ -45,7 +45,7 @@ library(nycflights13)
 of flights. Also look up the name of the most common destination and state it 
 in your narrative.
 
-The most common destinations for flights from NYC is Chicago. The ten most 
+The most common destinations for flights from NYC is ___. The ten most 
 common destinations are shown below.
 
 ```{r, eval = F}
