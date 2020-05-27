@@ -71,13 +71,15 @@
 	- [2](https://jobschepens.github.io/EW-M7E4/slides/w6-2-data-class-type-recode/w6-data-class-type-recode.html)
 - Lab 
 	- [Simpsons Paradox](https://jobschepens.github.io/EW-M7E4/labs/lab3/lab3-simpsons-paradox.html)
-	- [Try-out take-home assignment with evaluation key](https://jobschepens.github.io/EW-M7E4/labs/lab4/lab4-tufte-questions.html) and [starter Rmd file](https://github.com/jobschepens/EW-M7E4/labs/lab4/lab4-tufte-questions.Rmd)
+	- [Try-out take-home assignment with tips](https://jobschepens.github.io/EW-M7E4/labs/lab4/lab4-tufte-questions.html) and [starter Rmd file](
+	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab4/lab4-tufte-questions.Rmd)
 - Read:
 	- [7 Exploratory data analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html)
 - Datacamp:
 	- Data Visualization with ggplot2 (Part 2)
 	- Visualization Best Practices in R 
 - A special end of data section assignment
+	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key-tufte.html) and [starter Rmd file](https://github.com/jobschepens/EW-M7E4/blob/master/exams/exam-01/exam-01-key-tufte.Rmd)
 
 ## Week 7 (03.06.2020): Fitting models (Start of focus on statistics)
 - Read:
