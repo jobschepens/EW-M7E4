@@ -70,8 +70,8 @@
 	- [1](https://jobschepens.github.io/EW-M7E4/slides/w6-1-coding-style/w6-coding-style.html)
 	- [2](https://jobschepens.github.io/EW-M7E4/slides/w6-2-data-class-type-recode/w6-data-class-type-recode.html)
 - Lab 
-	- [Simpsons Paradox](https://jobschepens.github.io/EW-M7E4/labs/lab3/lab3-simpsons-paradox.html) and [starter Rmd file](
-	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab3/lab3-simpsons-paradox.Rmd)
+	- [Simpsons Paradox](https://jobschepens.github.io/EW-M7E4/labs/lab3/lab3-simpsons-paradox.html), [starter Rmd file](
+	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab3/lab3-simpsons-paradox.Rmd), and [solutions](https://jobschepens.github.io/EW-M7E4/labs/lab3/lab3-seminar.html)
 	- [Try-out take-home assignment with tips](https://jobschepens.github.io/EW-M7E4/labs/lab4/lab4-tufte-questions.html) and [starter Rmd file](
 	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab4/lab4-tufte-questions.Rmd)
 - Read:
