@@ -187,12 +187,7 @@ A survey asked respondents their name and number of cats. The instructions said 
 
 .small[
 ```{r message=FALSE}
-cat_lovers <- read_csv("../data/cat-lovers.csv")
-```
-
-```{r echo=FALSE}
-cat_lovers %>%
-  datatable()
+cat_lovers <- read_csv("../../data/cat-lovers.csv")
 ```
 ]
 
@@ -228,32 +223,24 @@ glimpse(cat_lovers)
 
 ---
 
-## Let's take another look
+## Check values
 
-.small[
-```{r echo=FALSE}
-cat_lovers %>%
-  datatable()
+```{r echo=T}
+summary(as.factor(cat_lovers$number_of_cats))
 ```
-]
+
+---
+
+## Check names
+
+```{r echo=T}
+cat_lovers %>% filter(number_of_cats == "three")
+cat_lovers %>% filter(number_of_cats == "1.5 - honestly I think one of my cats is half human")
+```
 
 ---
 
 ## Sometimes you need to babysit your respondents
-
-```{r}
-cat_lovers %>%
-  mutate(number_of_cats = case_when(
-    name == "Ginger Clark" ~ 2,
-    name == "Doug Bass"    ~ 3,
-    TRUE                   ~ as.numeric(number_of_cats)
-    )) %>%
-  summarise(mean_cats = mean(number_of_cats))
-```
-
----
-
-## Always you need to respect data types
 
 ```{r}
 cat_lovers %>%
@@ -421,6 +408,8 @@ mean_cats <- cat_lovers %>%
   summarise(mean_cats = mean(number_of_cats)) %>%
   pull()
 
+# mean_cats <- mean(cat_lovers$number_of_cats)
+
 cat_lovers %>%
   filter(number_of_cats < mean_cats) %>%
   nrow()
@@ -511,14 +500,9 @@ Source: [forcats.tidyverse.org](http://forcats.tidyverse.org/)
 
 ## Recap
 
-- Always best to think of data as part of a tibble
-    + This plays nicely with the `tidyverse` as well
-    + Rows are observations, columns are variables
 - Be careful about data types / classes
-    + Sometimes `R` makes silly assumptions about your data class 
-        + Using `tibble`s help, but it might not solve all issues
-        + Think about your data in context, e.g. 0/1 variable is most likely a `factor`
-    + If a plot/output is not behaving the way you expect, first
+    + `R` makes assumptions about your data class 
+    + If a plot/output is not behaving the way you expect, 
     investigate the data class
     + If you are absolutely sure of a data class, overwrite it in your
     tibble so that you don't need to keep having to keep track of it

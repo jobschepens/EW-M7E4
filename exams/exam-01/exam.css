@@ -14,7 +14,7 @@ html {
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
-	background-color: #fefefe;
+	/*background-color: #fefefe;*/
 	/*color: #222;*/
 	color: #333333;
 	counter-reset: li;
@@ -23,12 +23,14 @@ body {
 h1.title {
 	font-weight: 700;
 	font-family: 'Source Sans Pro', sans-serif;
+	/*color: #FFD748;*/
 	color: #54C236;
 }
 
 h1 {
 	font-style: normal;
 	font-family: 'Source Sans Pro', sans-serif;
+	/*color: #FFD748;*/
 	color: #54C236;
 }
 
@@ -36,11 +38,16 @@ h2 {
 	font-style: normal;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 400;
-	color: #54C236;
+	/*color: #A7D5E8;*/
+  	color: #54C236;
+
 }
 
 h3.subtitle {
 	font-style: normal;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	/*color: #FFD748;*/
 	color: #54C236;
 }
 
@@ -51,6 +58,7 @@ h4 {
 	margin-top: 1.5rem;
 	margin-bottom: 0;
 	line-height: 1;
+	/*color: #A7D5E8;*/
 }
 
 h4.author,
@@ -127,11 +135,11 @@ ol>li {
 
 ol>li:before {
 	/* Use the counter as content */
-	content: "Exercise " counter(li)".";
+	content: "Question " counter(li)".";
 	/* Increment the counter by 1 */
 	counter-increment: li;
 	position: absolute;
-	color: #54C236;
+	color: #A7D5E8;
 	left: -0.5px;
 	font-weight: bold;
 }

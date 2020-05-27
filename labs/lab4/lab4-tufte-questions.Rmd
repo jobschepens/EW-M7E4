@@ -1,0 +1,151 @@
+---
+title: "Lab 4 - Test Exam - NYC flights"
+subtitle: "TU Dortmund SoSe20 - Exploratory Data Analysis"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  tufte::tufte_html:
+    css: ../lab.css
+    tufte_variant: "envisioned"
+    highlight: haddock
+    toc: no
+    fig_height: 4
+    fig_width: 7
+margin_references: false
+fontsize: 11pt
+geometry: margin=.5in
+lang: eng
+---
+
+## Packages
+
+In this test assignment you will use, at a minimum, the tidyverse package. 
+Load these packages on top of your document.
+
+```{r load-packages, message=FALSE}
+library(tidyverse)
+library(nycflights13)
+```
+
+
+## Questions 
+
+<!-- Question 1 -->
+
+```{marginfigure}
+5 points:  
+- 2 pts - `count` OR `group_by` + `summarise`  
+- either 1 pt - `arrange` + `desc` or `sort = TRUE` in `count` 
+- 1 pt - `slice(1:10)`
+- 1 pt narrative
+```
+
+1. What are the ten most common destinations for flights from NYC airports in 
+2013? Your answer should be a table (or a data frame) with two columns 
+(destination code and number of flights), arranged in descending order of number 
+of flights. Also look up the name of the most common destination and state it 
+in your narrative.
+
+The most common destinations for flights from NYC is Chicago. The ten most 
+common destinations are shown below.
+
+```{r, eval = F}
+___ %>%
+  ___(___) %>%
+  ___(___(___)) %>%
+  slice(1:10)
+```
+
+<!-- Question 2 -->
+
+```{marginfigure}
+5 points:  
+- 1 pts - `count` OR `group_by` + `summarise`  
+- either 1 pt - `arrange` + `desc` or `sort = TRUE` in `count` 
+- 2 pt - `inner_join` with airlines  
+- 1 pt narrative  
+```
+
+2. What are the top three airlines with the highest numbers of flights 
+departing from NYC airports in 2013? Your answer should include a table 
+(or a data frame) with three columns: carrier code, number of flights, 
+and name of airline, and the airlines should be listed in descending order of 
+number of flights. *Hint:* The `airlines` dataset can be used to look up 
+airline names from their carrier codes.
+
+The carrier with the highest number of flights departing from NYC airports in 
+2013 is XXX, followed by YYY and ZZZ.
+
+```{r, eval = F}
+___ %>%
+  ___(___) %>%
+  ___(___(n)) %>%
+  ___(___, by = "___")
+```
+
+<!-- Question 3 -->
+
+```{marginfigure}
+10 pts:  
+- 2 pt - `filter` out `NAs` (or in `median`, `na.rm = TRUE`)  
+- 2 pts - output sorted in order of median aarival delay  
+- 2 pts - `inner_join` with `airlines`  
+- 2 pts - Frontier Airlines, 6 minutes  
+- 2 pts - Alaska Airlines, -17 minutes  
+```
+
+3. Consider only flights that have non-missing arrival delay information. 
+Which carrier has the highest median arrival delay and which carrier has the 
+lowest median arrival delay? Your answer should include a table (or a data 
+frame) with carrier code, median arrival delay, and name of airline. 
+**Hint:** First calculate the median arrival delay for all carriers, then 
+join with `airlines` to match airline names. For comupational efficienc, avoid 
+joining the large `flights` data frame directly with `airlines`.
+
+Highest median arrival delay is on ___ with ___ minutes, and 
+lowest median arrival delay is on ___ with ___ minutes (which means 
+arriving ___ minutes earlier than scheduled).
+
+```{r, eval = F}
+flights %>%
+  ___(!___(___)) %>%
+  ___(___) %>%
+  ___(___ = median(___)) %>%
+  ___(___(___)) %>%
+  inner_join(___, by = "___") %>%
+  slice(c(1, n())) # optional
+```
+
+<!-- Question 4 -->
+
+```{marginfigure}
+10 pts:  
+- 4 pts - JFK  
+- 3 pts - Jan 9  
+- 3 pts - 40.835 F  
+```
+
+4. Find the flight with the highest departure delay and determine on what day 
+this happened. What was the mean temperature on that day at the origin 
+airport of this flight? In your answer you should include carrier code and name, 
+origin airport, departure date, as well as the mean temperature on that day 
+at that airport. 
+
+First, we find the flight with the highest departure delay and take a note 
+of relevant information. The highest departure delay of ___ minutes 
+(approx ___ hours) was on a flight departing from ___ on ___. 
+
+```{r, eval = F}
+flights %>%
+  ___(___(dep_delay)) %>%
+  slice(1) %>%
+  ___(___, ___, ___, ___)
+```
+
+Then, we calculate the mean temperature on that day at the origin airport. 
+The average temperature on this day was ___ F. `R`
+
+```{r, eval = F}
+weather %>%
+  ___(___ == ___, ___ == ___, ___ == "___") %>%
+  summarise(mean_temp = ___(___))
+```
