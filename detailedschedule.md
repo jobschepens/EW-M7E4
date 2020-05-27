@@ -70,13 +70,14 @@
 	- [1](https://jobschepens.github.io/EW-M7E4/slides/w6-1-coding-style/w6-coding-style.html)
 	- [2](https://jobschepens.github.io/EW-M7E4/slides/w6-2-data-class-type-recode/w6-data-class-type-recode.html)
 - Lab 
-	- [Simpsons Paradox](https://jobschepens.github.io/EW-M7E4/labs/lab3/lab3-simpsons-paradox.html)
+	- [Simpsons Paradox](https://jobschepens.github.io/EW-M7E4/labs/lab3/lab3-simpsons-paradox.html) and [starter Rmd file](
+	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab3/lab3-simpsons-paradox.Rmd)
 	- [Try-out take-home assignment with tips](https://jobschepens.github.io/EW-M7E4/labs/lab4/lab4-tufte-questions.html) and [starter Rmd file](
 	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab4/lab4-tufte-questions.Rmd)
 - Read:
 	- [7 Exploratory data analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html)
 - Datacamp:
-	- (Visualization Best Practices in R)[https://learn.datacamp.com/courses/visualization-best-practices-in-r]
+	- [Visualization Best Practices in R](https://learn.datacamp.com/courses/visualization-best-practices-in-r)
 	- Data Visualization with ggplot2 (Part 2) (very advanced and very optional)
 - A special end of data section assignment
 	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key-tufte.html) and [starter Rmd file](https://github.com/jobschepens/EW-M7E4/blob/master/exams/exam-01/exam-01-key-tufte.Rmd)
