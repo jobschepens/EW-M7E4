@@ -23,10 +23,10 @@ knitr::opts_chunk$set(eval = FALSE)
 ## Introduction
 
 ```{r fig.margin=TRUE, eval=TRUE, echo=FALSE}
-include_graphics("img/whickham.png")
+# include_graphics("img/whickham.png")
 ```
 
-A study of conducted in Whickham, England recorded participants' age, smoking status at baseline, and then 20 years later recorded their health outcome.
+A study conducted in Whickham, England recorded participants' age, smoking status at baseline, and then 20 years later recorded their health outcome.
 
 # Packages
 
@@ -66,11 +66,26 @@ or at https://www.rdocumentation.org/packages/mosaicData/versions/0.14.0/topics/
 1. What type of study do you think these data comne from: observational 
    or experiment? Why?
 
+```{r}
+glimpse(Whickham)
+```
+
 2. How many observations are in this dataset? What does each observation 
    represent?
 
+
 3. How many variables are in this dataset? What type of variable is each? 
    Display each variable using an appropriate visualization.
+   
+```{r}
+Whickham %>% ggplot(aes(outcome)) + 
+  geom_bar()
+Whickham %>% ggplot(aes(smoker, fill = outcome)) + 
+  geom_bar(position = "stack")
+Whickham %>% ggplot(aes(age, fill = outcome)) + 
+  geom_boxplot()
+```
+
 
 4. What would you expect the relationship between smoking status and 
    health outcome to be?
@@ -83,7 +98,11 @@ or at https://www.rdocumentation.org/packages/mosaicData/versions/0.14.0/topics/
 
 ```{r}
 Whickham %>%
-  count(smoker, outcome)
+  count(smoker, outcome) %>% 
+  group_by(smoker) %>%
+  mutate(n_rel = n / sum(n)) %>%
+  ggplot(aes(x = smoker, y = n_rel, fill = outcome)) + 
+  geom_col()
 ```
 
 6. Create a new variable called `age_cat` using the following scheme:
@@ -92,6 +111,15 @@ Whickham %>%
 - `age > 44 & age <= 64 ~ "45-64"`
 - `age > 64 ~ "65+"`
 
+```{r}
+Whickham <- Whickham %>% mutate(age_cat = case_when(
+  age <= 44 ~ "18-44",
+  age > 44 & age <= 64 ~ "45-64",
+  age > 64 ~ "65+")) 
+glimpse(Whickham)
+```
+
+
 7. Re-create the visualization depicting the relationship between smoking 
 status and health outcome, faceted by `age_cat`. What changed? What might 
 explain this change? Extend the contingency table from earlier by 
@@ -99,5 +127,10 @@ breaking it down by age category and use it to help your narrative.
 
 ```{r}
 Whickham %>%
-  count(smoker, age_cat, outcome)
+  count(smoker, age_cat, outcome) %>% 
+  group_by(smoker, age_cat) %>%
+  mutate(n_rel = n / sum(n)) %>%
+  ggplot(aes(x = smoker, y = n_rel, fill = outcome)) + 
+  geom_col() + 
+  facet_wrap(vars(age_cat))
 ```
