@@ -80,7 +80,7 @@
 	- [Visualization Best Practices in R](https://learn.datacamp.com/courses/visualization-best-practices-in-r)
 	- Data Visualization with ggplot2 (Part 2) (very advanced and very optional)
 - A special end of data section assignment
-	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key-tufte.html) and [starter Rmd file](https://github.com/jobschepens/EW-M7E4/blob/master/exams/exam-01/exam-01-key-tufte.Rmd)
+	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key.html) and [starter Rmd file](https://github.com/jobschepens/EW-M7E4/blob/master/exams/exam-01/exam-01-key.Rmd). Solutions follow after the deadline (two weeks) has passed.
 
 ## Week 7 (03.06.2020): Fitting models (Start of focus on statistics)
 - Read:
