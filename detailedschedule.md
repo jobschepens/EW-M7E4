@@ -80,15 +80,15 @@
 	- [Visualization Best Practices in R](https://learn.datacamp.com/courses/visualization-best-practices-in-r)
 	- Data Visualization with ggplot2 (Part 2) (very advanced and very optional)
 - A special end of data section assignment
-	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key.html) and [starter Rmd file](https://github.com/jobschepens/EW-M7E4/blob/master/exams/exam-01/exam-01-key.Rmd). Solutions follow after the deadline (two weeks) has passed.
+	- [Take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key.html) and [starter Rmd file](https://github.com/jobschepens/EW-M7E4/blob/master/exams/exam-01/exam-01-key.Rmd). Solutions follow after the deadline (two weeks) has passed.
 
 ## Week 7 (03.06.2020): No class 
 - Continue working on take-home assignment
 
 ## Week 8 (10.06.2020): Statistical models (Start of focus on statistics)
 - Assignment answers
-	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key-tufte.html) 
-	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/labs/labs-4/lab4-tufte.html) 
+	- [Stex assignment](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key-tufte.html) 
+	- [NYCflights try-out assignment](https://jobschepens.github.io/EW-M7E4/labs/labs-4/lab4-tufte.html) 
 - Slides
 	- [1](https://jobschepens.github.io/EW-M7E4/slides/x1-language-of-models/x1-language-of-models.html)
 	- [2](https://jobschepens.github.io/EW-M7E4/slides/x2-formalizing-linear-models/x2-formalizing-linear-models.html)
