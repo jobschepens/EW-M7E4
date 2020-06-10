@@ -1,0 +1,280 @@
+---
+title: "Assignment 1 - Data Manipulation and Visualization"
+subtitle: "TU Dortmund SoSe20 - Exploratory Data Analysis"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  tufte::tufte_html:
+    css: exam.css
+    tufte_variant: "envisioned"
+    highlight: haddock
+    toc: no
+    fig_height: 4
+    fig_width: 7
+margin_references: false
+csl: apa.csl
+bibliography: p.bib
+fontsize: 11pt
+geometry: margin=.5in
+lang: eng
+---
+
+## Academic Honesty 
+
+** This is an individual "open book take-home assignment". Please do not share your answers with anyone other than yourself. Please do not simply copy answers from classmates or anyone else. It's fine to use external sources, to discuss, or to ask for help. **
+
+
+## Packages
+
+In this assignment you will use, at a minimum, the tidyverse package. 
+Load these packages on top of your document.
+
+```{r load-packages, message=FALSE}
+library(tidyverse)
+```
+
+## Introduction
+
+We will use an existing dataset that contains speaking proficiency test scores on an official language exam. 
+These speaking proficiency scores are taken from the State Exam Dutch as a Second Language as administred by the [Dutch Board of Examinations](https://www.hetcvte.nl/item/staatsexamens_nederlands_als). The data are available from https://zenodo.org/record/2863533. This dataset was published alongside a recent study on the effects of language similarity on speaking proficiency [@schepens_big_2020]. The study used three different measures of linguistic similarity: 
+
+- a lexical distance measure based on [@gray_language-tree_2003] using data that was retrieved from the [the Indo-European Lexical Cognacy Database (IELEX)](http://ielex.mpi.nl/), 
+- a morphological similarity measure based on [The World Atlas of Language Structures (WALS)](http://wals.info/) [@dryer_world_2011], and 
+- a phonological distance measure based on data from [Phonetics Information Base and Lexicon (PHOIBLE)](http://phoible.org/) [@moran_phoible_2014]. 
+
+
+## Questions 
+
+<!-- Question 1 -->
+
+```{marginfigure}
+1 points:  
+- use read.csv or read_csv 
+```
+
+1. Read in the data. 
+
+```{r}
+stex <- read.csv("stex.csv")
+```
+
+<!-- Question 2 -->
+
+```{marginfigure}
+3 points:    
+- 1 point: use dim() or length() or nrow()    
+- 1 point: use length() and unique()   
+- 1 point: use arrange() and desc()   
+```
+
+2. How many rows and columns does the dataset have? How many different first languages do the learners speak? Which language is spoken most often?
+
+```{r}
+dim(stex)
+length(unique(stex$L1))
+stex %>% count(L1) %>% arrange(desc(n))
+```
+
+<!-- Question 3 -->
+
+```{marginfigure}
+1 point:  use filter
+```
+
+3. Make sure that the data does not contain any missing values. Remove the rows with missing values from the dataset. 
+
+```{r}
+stex <- stex %>% filter(!is.na(Edu.day))
+```
+
+<!-- Question 4 -->
+
+```{marginfigure}
+3 points:     
+- 1 point: use geom_histogram()    
+- 1 point: binwidth     
+- 1 point: argumentation   
+```
+
+4. Make a histogram of the variable `AaA` (ago at arrival; age at which someone starts to live in the Netherlands). Choose and argue what a good value for `binwidth` is. 
+
+```{r}
+stex %>% 
+  ggplot() + 
+  geom_histogram(aes(x = AaA), fill = "blue", alpha = .5, binwidth = 1)
+```
+
+
+<!-- Question 5 -->
+
+```{marginfigure}
+3 points:  
+- 1 point: use filter()    
+- 1 point: use geom_density()    
+- 1 point: Answer Polish    
+```
+
+5. Make a density plot of `AaA` for the most common L1s (L1s with more than 2000 learners). Which L1 hast the highest mode? 
+
+```{r}
+stex_n <- stex %>% add_count(L1) %>% filter(n > 2000)
+stex_n %>% 
+  ggplot(aes(x = AaA, color = L1)) + 
+  geom_density(size = 2) + 
+  scale_x_continuous(limits = c(0, 50)) +
+  xlab("AaA")
+```
+
+
+<!-- Question 6 -->
+
+```{marginfigure}
+5 points:  
+- 1 point: use geom_point()     
+- 1 point: use geom_smooth    
+- 1 point: use geom_smooth    
+- 1 point: use facet_wrap    
+- 1 point: argumentation    
+```
+
+6. Make a faceted scatterplot for the most common L1s (using the subset from question 5) with speaking proficiency and age of arrival. Add a blue smooth line (geom_smooth) and a red straight line geom_smooth(method = "lm") to your scatterplots using `color = "blue"` or `color = "red"`. Describe the relationship between age of arrival and speaking proficiency.    
+
+Age of arrival has a negative effect, except for German. 
+
+```{r}
+stex_n %>% 
+  ggplot(aes(x = AaA, y = Speaking)) + 
+  geom_point(alpha = .5) + 
+  geom_smooth(color = "blue") + 
+  geom_smooth(method = "lm", color = "red") + 
+  facet_wrap(vars(L1))
+```
+
+
+<!-- Question 7 -->
+
+```{marginfigure}
+4 points:  
+- 1 point: use filter()     
+- 1 point: use geom_bar    
+- 1 point: use facet_wrap(vars(L1))    
+- 1 point: argumentation    
+```
+
+7. Make a barplot (geom_bar) showing how many people arrived at which age of arrival. Use color to distinguish between genders and use facets to distinguish between L1s (use the subset again). Make sure that the bars do not show on top of each other but next to eachother. Filter first to show only learners who arrived when they where between 20 and 40 years old. Describe how the patterns for arrival differ across gender and L1. 
+
+
+L1 Arabic and Turkish learners are more often male as opossed to other languages. 
+
+```{r}
+stex_n %>% 
+  filter(AaA < 40,
+         AaA > 20) %>% 
+  # count(L1, AaA, Sex) %>% 
+  # group_by(L1, AaA) %>%
+  # mutate(n_rel = n / sum(n)) %>%
+  ggplot(aes(x = AaA, fill = Sex)) + 
+  geom_bar(position = position_dodge()) +
+  # geom_bar(position = "dodge") +
+  # geom_bar() + 
+  # geom_col(position = "dodge") + 
+  facet_wrap(vars(L1))
+```
+
+
+
+<!-- Question 8 -->
+
+```{marginfigure}
+7 points:  
+- 1 point: group_by    
+- 1 point: filter    
+- 1 point: summarise    
+- 1 point: stat_smooth    
+- 1 point: labs    
+- 1 point: facets    
+- 1 point: scale    
+
+```
+
+8. Make a scatterplot for the relation between speaking proficiency and linguistic similarity. Use color to highlight gender differences and use facets to distinguish between different lengths of daily education. 
+
+- The first step is to summarize the data. We need average speaking proficiency scores for each combination of `L1`, `Sex`, and `Edu.day`. Use the `summarise` function to build a small data set that contains the variables: `score` and `new_feat`. Use the mean for the speaking score. `new_feat` represents a measure of phonological linguistic similarity. You can take the mean, or any other value when aggregrating, for example the first value by writing `p = new_feat[1]` in you `summarise` function.  Add a count to the new dataset (using `add_count()`) and `filter` out groups with less than 20 cases. 
+- The second step is to make the scatterplot. Add points for the average scores that you computed and a smooth line. Also add axis labels and choose limits for the y axis using `ylim` or `scale_y_continuous(limits = c(___, ___)`. Add facets for `Edu.day`. 
+- Describe the gender differences. Think critically about whether your findings say something about whether these gender differences may be cultural or biological.
+
+No relations maybe indicates independe from education or distance. 
+
+```{r}
+l1s <- stex %>% 
+	group_by(L1, Edu.day, Sex) %>%
+  add_count() %>%
+  filter(n > 20) %>%
+	summarise(
+	      score = mean(Speaking), 
+	      l = lex[1],
+			  p = new_feat[1],
+			  m = morph[1])
+ggplot(l1s, aes(x = p, y = score, color = Sex)) + 
+  geom_point() +
+  stat_smooth(method = "lm", se = F) +
+  xlab("Distance") + 
+  ylab("Score") + 
+  facet_wrap(vars(Edu.day), ncol = 4) +
+  scale_y_continuous(breaks = c(450, 500, 550), limits = c(450, 575))
+```
+
+
+
+<!-- Question 9 -->
+
+```{marginfigure}
+9 points:  
+- 1 point: group_by
+- 1 point: summarise
+- 1 point: gather
+- 1 point: gather argumentats
+- 1 point: case_when
+- 1 point: geom_point
+- 1 point: stat_smooth
+- 1 point: facet_wrap
+- 1 point: labs
+```
+
+9. The goal of this final excercise is to make a scatterplot for the relation between linguistic similarity and speaking proficiency for three different measures of linguistic similarity and using color to highlight the languages from the Indo-European language family. 
+
+- The first step is again to summarize the data since we only need average speaking proficiency scores for each L1. Use the `summarise` function to build a small data set that contains the variables: `score`, `lex`, `new_feat`, `morph`, and `Family.` Use the mean for the speaking score. `lex`, `new_feat`, and `morph` represent measures of linguistic similarity, which do not vary across L1s. You can take the mean, or any other value when aggregrating, for example the first value by writing `lex = lex[1]` in you `summarise` function.  
+- The second step is to gather the columns for the three measures and turn them into observations using the `gather` function. Your gather function will take a `key`, a `value` and the names of the columns that you want to gather as arguments. Think of a name to use as the column name for the key (`key = "___"`. This column will contain the column names you choose in the summarize function. Think also of a name to use as the column name for the values (`value = "___"`). This column will contain the actual measures.  
+- The third step is to make a new variable that has the value "IE" for Indo-European languages and "Non-IE" for non-Indo-European languages. Use the variable fam in the data to do this. You could use `case_when()`.
+- The final step is to make the scatterplot. Add points and a smooth line to your plot and axis labels. Add facets for the three different measures. Use the `scales = "free_x"` argument in `facet_wrap()` to make the plot look nicer. Use `aes(group = 1)` in your call to geom smooth and use `aes(colour = ___)` in your call to geom_point.
+- Describe the differences between the distance measures. 
+
+l is basically three groups, m is only different for a few non-IE languages, p varies nicely across the spectrum.
+
+```{r}
+l1s <- stex %>% 
+	group_by(L1) %>%
+	summarise(
+	      score = mean(Speaking), 
+	      l = lex[1],
+			  p = new_feat[1],
+			  m = morph[1],
+			  fam = Family[1])
+
+l1s <- l1s %>% gather(key = "Distance", value = "Value", l, p, m)
+
+l1s <- l1s %>% mutate(fam2 = case_when(
+  fam == "Indo-European" ~ "IE", 
+  TRUE ~ "Non-IE"
+))
+
+ggplot(l1s, aes(x = Value, y = score)) + 
+  geom_point(aes(colour = fam2), size = 1) +
+  stat_smooth(aes(group = 1), method = "lm") +
+  xlab("Distance") + 
+  ylab("Speaking score") +
+  facet_wrap(vars(Distance), scales = "free_x")
+```
+
+
+
+## References

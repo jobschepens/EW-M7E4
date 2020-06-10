@@ -82,66 +82,72 @@
 - A special end of data section assignment
 	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key.html) and [starter Rmd file](https://github.com/jobschepens/EW-M7E4/blob/master/exams/exam-01/exam-01-key.Rmd). Solutions follow after the deadline (two weeks) has passed.
 
-## Week 7 (03.06.2020): Fitting models (Start of focus on statistics)
+## Week 7 (03.06.2020): No class 
+- Continue working on take-home assignment
+
+## Week 8 (10.06.2020): Statistical models (Start of focus on statistics)
+- Assignment answers
+	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key-tufte.html) 
+	- [Try-out take-home assignment without tips](https://jobschepens.github.io/EW-M7E4/labs/labs-4/lab4-tufte.html) 
+- Slides
+	- [1](https://jobschepens.github.io/EW-M7E4/slides/x1-language-of-models/x1-language-of-models.html)
+	- [2](https://jobschepens.github.io/EW-M7E4/slides/x2-formalizing-linear-models/x2-formalizing-linear-models.html)
 - Read:
 	- Russel Poldrack - Chapter 5
 	- Jan Vanhove: Chapters 3
+- Important concepts:
+	- basic equation for statistical models, describe distribution
 - Datacamp 
-	- Foundations of Probability in R
 
-
-## Week 8 (10.06.2020): Probability
+## Week 9 (17.06.2020): Probability
 - Read:
 	- Russel Poldrack - Chapter 6
 	- Jan Vanhove: Chapters 4
+- Important concepts:
+	- relative frequency, conditional probability
 - Datacamp 
-	- Foundations of Probability in R
+	- Foundations of Probability in R (optional)
 
-
-## Week 9 (17.06.2020): Foundations 1 - Sampling
+## Week 10 (24.06.2020): Foundations 1 - Sampling
 - Read:
 	- Russel Poldrack: Chapters 7, (8)
 	- Jan Vanhove: Chapters 5
+- Important concepts:
+	- population, sample, sampling error, standard error, confidence interval
 - Datacamp: 
-	- Experimental Design in R
 
-
-## Week 10 (24.06.2020): Foundations 2 - Hypothesis testing and confidence intervals
+## Week 11 (01.07.2020): Foundations 2 - Hypothesis testing and confidence intervals
 - Read:
 	- Russel Poldrack: Chapters 9, (10)
 	- Jan Vanhove: Chapters 6
+- Important concepts:
+	- null hypothesis statistical testing, p-value, type 1 and type 2 error, power, (effect size)
 - Datacamp:
-	- Foundations of Inference in R 
+	- [Foundations of Inference in R](https://learn.datacamp.com/courses/foundations-of-inference-in-r)
 
-
-## Week 11 (01.07.2020): Inference - Comparing means and proportions and the chi-square test
+## Week 12 (08.07.2020): Inference - Comparing proportions and means (chi-squared and correlation)
 - Read:
 	- Russel Poldrack: Chapters 12, 13
 	- Jan Vanhove: Chapters 12, 13
-- Datacamp
+- Important concepts:
+	- contingency table, chi-squared test, correlation
+- Datacamp:
 	- Inference for Categorical Data in R
 
-
-## Week 12 (08.07.2020): Regression 1 
+## Week 13 (15.07.2020): Modelling - General linear model
 - Read:
-	- Russel Poldrack: Chapter 14
+	- Russel Poldrack: Chapter 14 (linear regression), 15 (groups)
 	- Jan Vanhove: Teil III
+- Important concepts:
+	- general linear model, linear regression, t-test, anova
+- Present final project
+	- Only for those who choose to do a Modulpruefung
 - Datacamp:
-	- 16 Correlation and Regression in R
-
-
-## Week 13 (15.07.2020): Regression 2
-- Read:
-	- Russel Poldrack: Chapter 15
-	- Jan Vanhove: Teil III
-- Datacamp:
+	- [Correlation and Regression in R](https://learn.datacamp.com/courses/correlation-and-regression-in-r)
+	- [Inference for Numerical Data in R](https://learn.datacamp.com/courses/inference-for-numerical-data-in-r) (optional)
+	- [Inference for Linear Regression in R](https://learn.datacamp.com/courses/inference-for-linear-regression-in-r) (optional)
 	- Modeling with Data in the Tidyverse (optional)
 	- Multiple and Logistic Regression in R (optional)
-
-
-## Week 14 (22.07.2020): Presentations of final projects 
-- only for those who choose to do a Modulpruefung
-
 
 ## Bonus 1: Modeling  
 - Read: R4DS: 
@@ -150,7 +156,7 @@
 		- 19 Modelle erstellen
 		- 20 Viele Modelle mit purrr und broom (optional)
 - Datacamp:
-	- 17 Modeling with Data in the Tidyverse
+	- Modeling with Data in the Tidyverse
 - A special end of stats section assignment
 
 ## Bonus 2: Kommunizieren
