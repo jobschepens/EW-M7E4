@@ -96,7 +96,7 @@
 	- Russel Poldrack - Chapter 5
 	- Jan Vanhove: Chapters 3
 - Important concepts:
-	- basic equation for statistical models, describe distribution
+	- basic equation for statistical models, describe distributions
 - Datacamp 
 
 ## Week 9 (17.06.2020): Probability
