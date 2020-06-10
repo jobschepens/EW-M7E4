@@ -93,11 +93,12 @@
 	- [1](https://jobschepens.github.io/EW-M7E4/slides/x1-language-of-models/x1-language-of-models.html)
 	- [2](https://jobschepens.github.io/EW-M7E4/slides/x2-formalizing-linear-models/x2-formalizing-linear-models.html)
 - Read:
-	- Russel Poldrack - Chapter 5
-	- Jan Vanhove: Chapters 3
+	- [Russel Poldrack - Chapter 5](https://statsthinking21.github.io/statsthinking21-core-site/fitting-models.html)
+	- Jan Vanhove: Chapter 3
 - Important concepts:
 	- basic equation for statistical models, describe distributions
-- Datacamp 
+- `adventr`
+	- [`adventr` *adventr_04*](http://milton-the-cat.rocks/home/adventr.html)
 
 ## Week 9 (17.06.2020): Probability
 - Read:
