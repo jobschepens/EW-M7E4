@@ -88,7 +88,7 @@
 ## Week 8 (10.06.2020): Statistical models (Start of focus on statistics)
 - Assignment answers
 	- [Stex assignment](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key-tufte.html) 
-	- [NYCflights try-out assignment](https://jobschepens.github.io/EW-M7E4/labs/labs-4/lab4-tufte.html) 
+	- [NYCflights try-out assignment](https://jobschepens.github.io/EW-M7E4/labs/labs4/lab4-tufte.html) 
 - Slides
 	- [1](https://jobschepens.github.io/EW-M7E4/slides/x1-language-of-models/x1-language-of-models.html)
 	- [2](https://jobschepens.github.io/EW-M7E4/slides/x2-formalizing-linear-models/x2-formalizing-linear-models.html)
