@@ -101,11 +101,12 @@
 	- [2](https://jobschepens.github.io/EW-M7E4/slides/x2-formalizing-linear-models/x2-formalizing-linear-models.html)
 - Read:
 	- [Modern Dive - Chapter 5 on Regression](https://moderndive.com/5-regression.html)
+	- [Modern Dive - Chapter 6 on Multiple Regression](https://moderndive.com/6-multiple-regression.html)
 - Important concepts:
 	- basic equation for statistical models, describe distributions
 - Lab
-	- [Professor attractiveness](https://jobschepens.github.io/EW-M7E4/labs/lab5/lab5-modelling-course-evals.html), [starter Rmd file](
-	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab5/lab5-modelling-course-evals.Rmd)
+	- [Professor attractiveness](https://jobschepens.github.io/EW-M7E4/labs/lab5-profs/lab5-modelling-course-evals.html), [starter Rmd file](
+	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab5-profs/lab5-modelling-course-evals.Rmd)
 
 ## Week 10 (24.06.2020): Probability, Sampling, Confidence Intervals
 - Slides
@@ -115,7 +116,6 @@
 - Read:
 	- [Russel Poldrack - 6 Probability](https://statsthinking21.github.io/statsthinking21-core-site/probability.html)
 	- [Russel Poldrack - 7 Sampling](https://statsthinking21.github.io/statsthinking21-core-site/sampling.html)
-	- [Modern Dive - Chapter 6 on Multiple Regression](https://moderndive.com/6-multiple-regression.html)
 	- [Modern Dive - Chapter 7 on Sampling](https://moderndive.com/7-sampling.html)
 	- [Modern Dive - Chapter 8 on Confidence Intervals](https://moderndive.com/8-confidence-intervals.html)
 	- Jan Vanhove: Chapters 4 and 5
@@ -131,9 +131,9 @@
 - Slides
 	- H0, p-value
 - Read:
-	- [Russel Poldrack: Chapters 9, (10)](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html)
+	- [Russel Poldrack: Chapter 9 on Hypothesis Testing](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html)
 	- [Modern Dive - Chapter 9 on Hypothesis Testing](https://moderndive.com/9-hypothesis-testing.html)
-	- Jan Vanhove: Chapters 6
+	- Jan Vanhove: Chapter 6
 - Important concepts:
 	- null hypothesis statistical testing, p-value, type 1 and type 2 error, power, (effect size)
 - Lab
