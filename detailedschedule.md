@@ -85,50 +85,68 @@
 ## Week 7 (03.06.2020): No class 
 - Continue working on take-home assignment
 
-## Week 8 (10.06.2020): Statistical models (Start of focus on statistics)
+## Week 8 (10.06.2020): Discuss Assignment
 - Assignment answers
 	- [Stex assignment](https://jobschepens.github.io/EW-M7E4/exams/exam-01/exam-01-key-tufte.html) 
 	- [NYCflights try-out assignment](https://jobschepens.github.io/EW-M7E4/labs/lab4/lab4-tufte.html) 
+- Read:
+	- [Russel Poldrack - Chapter 5](https://statsthinking21.github.io/statsthinking21-core-site/fitting-models.html)
+	- Jan Vanhove: Chapter 3
+- `adventr`
+	- [`adventr` *adventr_04*](http://milton-the-cat.rocks/home/adventr.html)
+
+## Week 9 (17.06.2020): Statistical models (Start of focus on statistics) 
 - Slides
 	- [1](https://jobschepens.github.io/EW-M7E4/slides/x1-language-of-models/x1-language-of-models.html)
 	- [2](https://jobschepens.github.io/EW-M7E4/slides/x2-formalizing-linear-models/x2-formalizing-linear-models.html)
 - Read:
-	- [Russel Poldrack - Chapter 5](https://statsthinking21.github.io/statsthinking21-core-site/fitting-models.html)
-	- Jan Vanhove: Chapter 3
+	- [Modern Dive - Chapter 5 on Regression](https://moderndive.com/5-regression.html)
 - Important concepts:
 	- basic equation for statistical models, describe distributions
-- `adventr`
-	- [`adventr` *adventr_04*](http://milton-the-cat.rocks/home/adventr.html)
+- Lab
+	- [Professor attractiveness](https://jobschepens.github.io/EW-M7E4/labs/lab5/lab5-modelling-course-evals.html), [starter Rmd file](
+	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab5/lab5-modelling-course-evals.Rmd)
 
-## Week 9 (17.06.2020): Probability
+## Week 10 (24.06.2020): Probability, Sampling, Confidence Intervals
+- Slides
+	- interaction, model selection (R2), backward selection, 
+	- coefficient interpretation (predict), cross-validation
+	- confidence intervals
 - Read:
-	- Russel Poldrack - Chapter 6
-	- Jan Vanhove: Chapters 4
+	- [Russel Poldrack - 6 Probability](https://statsthinking21.github.io/statsthinking21-core-site/probability.html)
+	- [Russel Poldrack - 7 Sampling](https://statsthinking21.github.io/statsthinking21-core-site/sampling.html)
+	- [Modern Dive - Chapter 6 on Multiple Regression](https://moderndive.com/6-multiple-regression.html)
+	- [Modern Dive - Chapter 7 on Sampling](https://moderndive.com/7-sampling.html)
+	- [Modern Dive - Chapter 8 on Confidence Intervals](https://moderndive.com/8-confidence-intervals.html)
+	- Jan Vanhove: Chapters 4 and 5
 - Important concepts:
 	- relative frequency, conditional probability
+	- population, sample, sampling error, standard error, confidence interval
+- `adventr`
+	- [`adventr` *adventr_08* Inferential statistics and robust estimation](http://milton-the-cat.rocks/home/adventr.html)
 - Datacamp 
 	- Foundations of Probability in R (optional)
 
-## Week 10 (24.06.2020): Foundations 1 - Sampling
+## Week 11 (01.07.2020): Hypothesis testing
+- Slides
+	- H0, p-value
 - Read:
-	- Russel Poldrack: Chapters 7, (8)
-	- Jan Vanhove: Chapters 5
-- Important concepts:
-	- population, sample, sampling error, standard error, confidence interval
-- Datacamp: 
-
-## Week 11 (01.07.2020): Foundations 2 - Hypothesis testing and confidence intervals
-- Read:
-	- Russel Poldrack: Chapters 9, (10)
+	- [Russel Poldrack: Chapters 9, (10)](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html)
+	- [Modern Dive - Chapter 9 on Hypothesis Testing](https://moderndive.com/9-hypothesis-testing.html)
 	- Jan Vanhove: Chapters 6
 - Important concepts:
 	- null hypothesis statistical testing, p-value, type 1 and type 2 error, power, (effect size)
+- Lab
+	- Hypothesis testing
 - Datacamp:
 	- [Foundations of Inference in R](https://learn.datacamp.com/courses/foundations-of-inference-in-r)
 
-## Week 12 (08.07.2020): Inference - Comparing proportions and means (chi-squared and correlation)
+## Week 12 (08.07.2020): Comparing proportions and means (chi-squared and correlation)
+- Slides
+	- overview
 - Read:
-	- Russel Poldrack: Chapters 12, 13
+	- [Russel Poldrack: Chapters 12 Modeling categorical relationships](https://statsthinking21.github.io/statsthinking21-core-site/modeling-categorical-relationships.html)
+	- [Russel Poldrack: Chapters 13 Modeling continuous relationships](https://statsthinking21.github.io/statsthinking21-core-site/modeling-continuous-relationships.html)
 	- Jan Vanhove: Chapters 12, 13
 - Important concepts:
 	- contingency table, chi-squared test, correlation
@@ -136,11 +154,15 @@
 	- Inference for Categorical Data in R
 
 ## Week 13 (15.07.2020): Modelling - General linear model
+- Slides
+	- review
 - Read:
-	- Russel Poldrack: Chapter 14 (linear regression), 15 (groups)
+	- [Modern Dive - Chapter 10 on Inference](https://moderndive.com/10-inference-for-regression.html)
+	- [Russel Poldrack: Chapter 14 (linear regression)](https://statsthinking21.github.io/statsthinking21-core-site/the-general-linear-model.html)
+	- [Russel Poldrack: Chapter 15 (comparing groups)](https://statsthinking21.github.io/statsthinking21-core-site/comparing-means.html)
 	- Jan Vanhove: Teil III
 - Important concepts:
-	- general linear model, linear regression, t-test, anova
+	- general linear model, t-test, anova
 - Present final project
 	- Only for those who choose to do a Modulpruefung
 - Datacamp:
@@ -149,6 +171,7 @@
 	- [Inference for Linear Regression in R](https://learn.datacamp.com/courses/inference-for-linear-regression-in-r) (optional)
 	- Modeling with Data in the Tidyverse (optional)
 	- Multiple and Logistic Regression in R (optional)
+
 
 ## Bonus 1: Modeling  
 - Read: R4DS: 

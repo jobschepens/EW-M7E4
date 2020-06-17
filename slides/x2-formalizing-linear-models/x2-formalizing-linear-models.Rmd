@@ -65,7 +65,7 @@ pp <- read_csv("../../data/paris-paintings.csv",
 
 ## Want to follow along?
 
-Go to RStudio Cloud -> make a copy of "Modelling Paris Paintings"
+Download the "Modelling Paris Paintings" dataset  [here](https://github.com/jobschepens/EW-M7E4/blob/master/data/paris-paintings.csv)
 
 ---
 
