@@ -101,11 +101,8 @@ What makes a data frame tidy?
 Achieved with functions from the broom package:
 
 - `tidy`: Constructs a data frame that summarizes the model's statistical findings: coefficient estimates, *standard errors, test statistics, p-values*.
-
 - `augment`: Adds columns to the original data that was modeled. This includes predictions and residuals.
-
 - `glance`: Constructs a concise one-row summary of the model. This typically contains values such as $R^2$, adjusted $R^2$, *and residual standard error that are computed once for the entire model*.
-
 ---
 
 ## Tidy your model's statistical findings
@@ -362,16 +359,20 @@ What's the unit of residuals?
 ## Transforming the data
 
 - We saw that `price` has a right-skewed distribution, and the relationship between price and width of painting is non-linear.
+
 --
 - In these situations a transformation applied to the response variable may be useful. (e.g. log, inverse, square root, standardize, 1/x, time series, ...)
+
 --
 - In order to decide which transformation to use, we should examine the distribution of the response variable.
+
 --
 - The extremely right skewed distribution suggests that a log transformation may 
 be useful.
     - log = natural log, $ln$
     - Default base of the `log` function in R is the natural log: <br>
     `log(x, base = exp(1))`
+    
 ---
 
 ## Logged price vs. width
@@ -409,17 +410,22 @@ $$ \widehat{log(price)} = 4.67 + 0.02 Width $$
 --
 - For each additional inch the painting is wider, the log price of the
 painting is expected to be higher, on average, by 0.02 livres.
+
 --
 - which is not a very useful statement...
+
 ---
 
 ## Working with logs
 
 - Subtraction and logs: $log(a) − log(b) = log(a / b)$
+
 --
 - Natural logarithm: $e^{log(x)} = x$
+
 --
 - We can use these identities to "undo" the log transformation
+
 ---
 
 ## Interpreting models with log transformation
@@ -504,15 +510,18 @@ lm(log(price) ~ Width_in, data = pp_wt_lt_100) %>%
 
 - Non-constant variance is one of the most common model violations, however it 
 is usually fixable by transforming the response (y) variable.
+
 --
 - The most common transformation when the response variable is right skewed is 
 the log transform: $log(y)$, especially useful when the response variable is 
 (extremely) right skewed.
+
 --
 - This transformation is also useful for variance stabilization.
 --
 - When using a log transformation on the response variable the interpretation of 
 the slope changes: *"For each unit increase in x, y is expected on average to be higher/lower <br> by a factor of $e^{b_1}$."*
+
 --
 - Another useful transformation is the square root: $\sqrt{y}$, especially 
 useful when the response variable is counts.

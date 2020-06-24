@@ -112,11 +112,8 @@ What makes a data frame tidy?
 Achieved with functions from the broom package:
 
 - `tidy`: Constructs a data frame that summarizes the model's statistical findings: coefficient estimates, *standard errors, test statistics, p-values*.
-
 - `augment`: Adds columns to the original data that was modeled. This includes predictions and residuals.
-
 - `glance`: Constructs a concise one-row summary of the model. This typically contains values such as `\(R^2\)`, adjusted `\(R^2\)`, *and residual standard error that are computed once for the entire model*.
-
 ---
 
 ## Tidy your model's statistical findings
@@ -167,14 +164,13 @@ augment(m_ht_wt) %&gt;%
 
 ```
 ## # A tibble: 5 x 10
-##   .rownames Height_in Width_in .fitted .se.fit .resid    .hat .sigma .cooksd
-##   &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
-## 1 1                37     29.5    26.7   0.166  10.3  3.99e-4   8.30 3.10e-4
-## 2 2                18     14      14.6   0.165   3.45 3.96e-4   8.31 3.42e-5
-## 3 3                13     16      16.1   0.158  -3.11 3.61e-4   8.31 2.54e-5
-## 4 4                14     18      17.7   0.152  -3.68 3.37e-4   8.31 3.30e-5
-## 5 5                14     18      17.7   0.152  -3.68 3.37e-4   8.31 3.30e-5
-## # ... with 1 more variable: .std.resid &lt;dbl&gt;
+##   .rownames Height_in Width_in .fitted .se.fit .resid     .hat .sigma  .cooksd .std.resid
+##   &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+## 1 1                37     29.5    26.7   0.166  10.3  0.000399   8.30  3.10e-4      1.25 
+## 2 2                18     14      14.6   0.165   3.45 0.000396   8.31  3.42e-5      0.415
+## 3 3                13     16      16.1   0.158  -3.11 0.000361   8.31  2.54e-5     -0.375
+## 4 4                14     18      17.7   0.152  -3.68 0.000337   8.31  3.30e-5     -0.443
+## 5 5                14     18      17.7   0.152  -3.68 0.000337   8.31  3.30e-5     -0.443
 ```
 ]
 
@@ -218,10 +214,10 @@ glance(m_ht_wt)
 
 ```
 ## # A tibble: 1 x 11
-##   r.squared adj.r.squared sigma statistic p.value    df  logLik    AIC    BIC
-##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-## 1     0.683         0.683  8.30     6749.       0     2 -11083. 22173. 22191.
-## # ... with 2 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;
+##   r.squared adj.r.squared sigma statistic p.value    df  logLik    AIC    BIC deviance
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+## 1     0.683         0.683  8.30     6749.       0     2 -11083. 22173. 22191.  216055.
+## # ... with 1 more variable: df.residual &lt;int&gt;
 ```
 
 --
@@ -362,16 +358,20 @@ What's the unit of residuals?
 ## Transforming the data
 
 - We saw that `price` has a right-skewed distribution, and the relationship between price and width of painting is non-linear.
+
 --
 - In these situations a transformation applied to the response variable may be useful. (e.g. log, inverse, square root, standardize, 1/x, time series, ...)
+
 --
 - In order to decide which transformation to use, we should examine the distribution of the response variable.
+
 --
 - The extremely right skewed distribution suggests that a log transformation may 
 be useful.
     - log = natural log, `\(ln\)`
     - Default base of the `log` function in R is the natural log: &lt;br&gt;
     `log(x, base = exp(1))`
+    
 ---
 
 ## Logged price vs. width
@@ -436,10 +436,13 @@ painting is expected to be higher, on average, by 0.02 livres.
 ## Working with logs
 
 - Subtraction and logs: `\(log(a) − log(b) = log(a / b)\)`
+
 --
 - Natural logarithm: `\(e^{log(x)} = x\)`
+
 --
 - We can use these identities to "undo" the log transformation
+
 ---
 
 ## Interpreting models with log transformation
