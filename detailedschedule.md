@@ -101,17 +101,29 @@
 	- [2](https://jobschepens.github.io/EW-M7E4/slides/x2-formalizing-linear-models/x2-formalizing-linear-models.html)
 - Read:
 	- [Modern Dive - Chapter 5 on Regression](https://moderndive.com/5-regression.html)
-	- [Modern Dive - Chapter 6 on Multiple Regression](https://moderndive.com/6-multiple-regression.html)
 - Important concepts:
 	- basic equation for statistical models, describe distributions
 - Lab
 	- [Professor attractiveness](https://jobschepens.github.io/EW-M7E4/labs/lab5-profs/lab5-modelling-course-evals.html), [starter Rmd file](
 	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab5-profs/lab5-modelling-course-evals.Rmd)
 
-## Week 10 (24.06.2020): Probability, Sampling, Confidence Intervals
+## Week 10 (24.06.2020): Interactions, model selection 
 - Slides
-	- interaction, model selection (R2), backward selection, 
-	- coefficient interpretation (predict), cross-validation
+	- [1](https://jobschepens.github.io/EW-M7E4/slides/x3-model-nonlinear/x3-model-nonlinear.html)
+	- [2](https://jobschepens.github.io/EW-M7E4/slides/x4-mlr-model-select/x4-mlr-model-select.html)
+- Read:
+	- [Modern Dive - Chapter 6 on Multiple Regression](https://moderndive.com/6-multiple-regression.html)
+- Important concepts:
+	- interactions, transformations, model selection, coefficient interpretation
+- Lab
+	- [Answers Lab 5 - Professor attractiveness part 1](https://jobschepens.github.io/EW-M7E4/labs/lab5-profs/lab5-modelling-course-evals-answers.html)
+	- [Professor attractiveness part 2](https://jobschepens.github.io/EW-M7E4/labs/lab6-profs2/lab6-mlr-course-evals.html), [starter Rmd file](
+	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab6-profs2/lab6-mlr-course-evals.Rmd)
+- Datacamp
+	- [Correlation and Regression in R](https://learn.datacamp.com/courses/correlation-and-regression-in-r)	
+
+## Week 11 (01.07.2020): Probability, Sampling, Confidence Intervals
+- Slides
 	- confidence intervals
 - Read:
 	- [Russel Poldrack - 6 Probability](https://statsthinking21.github.io/statsthinking21-core-site/probability.html)
@@ -122,14 +134,16 @@
 - Important concepts:
 	- relative frequency, conditional probability
 	- population, sample, sampling error, standard error, confidence interval
+- Datacamp:
+	- [Foundations of Inference in R](https://learn.datacamp.com/courses/foundations-of-inference-in-r)
+	- Foundations of Probability in R (optional)
 - `adventr`
 	- [`adventr` *adventr_08* Inferential statistics and robust estimation](http://milton-the-cat.rocks/home/adventr.html)
-- Datacamp 
-	- Foundations of Probability in R (optional)
 
-## Week 11 (01.07.2020): Hypothesis testing
+## Week 12 (08.07.2020): Hypothesis testing
 - Slides
 	- H0, p-value
+	- overview
 - Read:
 	- [Russel Poldrack: Chapter 9 on Hypothesis Testing](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html)
 	- [Modern Dive - Chapter 9 on Hypothesis Testing](https://moderndive.com/9-hypothesis-testing.html)
@@ -139,34 +153,25 @@
 - Lab
 	- Hypothesis testing
 - Datacamp:
-	- [Foundations of Inference in R](https://learn.datacamp.com/courses/foundations-of-inference-in-r)
-
-## Week 12 (08.07.2020): Comparing proportions and means (chi-squared and correlation)
-- Slides
-	- overview
-- Read:
-	- [Russel Poldrack: Chapters 12 Modeling categorical relationships](https://statsthinking21.github.io/statsthinking21-core-site/modeling-categorical-relationships.html)
-	- [Russel Poldrack: Chapters 13 Modeling continuous relationships](https://statsthinking21.github.io/statsthinking21-core-site/modeling-continuous-relationships.html)
-	- Jan Vanhove: Chapters 12, 13
-- Important concepts:
-	- contingency table, chi-squared test, correlation
-- Datacamp:
 	- Inference for Categorical Data in R
 
-## Week 13 (15.07.2020): Modelling - General linear model
+## Week 13 (15.07.2020): Modelling
 - Slides
 	- review
 - Read:
 	- [Modern Dive - Chapter 10 on Inference](https://moderndive.com/10-inference-for-regression.html)
+	- [Russel Poldrack: Chapters 12 Modeling categorical relationships](https://statsthinking21.github.io/statsthinking21-core-site/modeling-categorical-relationships.html)
+	- [Russel Poldrack: Chapters 13 Modeling continuous relationships](https://statsthinking21.github.io/statsthinking21-core-site/modeling-continuous-relationships.html)
 	- [Russel Poldrack: Chapter 14 (linear regression)](https://statsthinking21.github.io/statsthinking21-core-site/the-general-linear-model.html)
 	- [Russel Poldrack: Chapter 15 (comparing groups)](https://statsthinking21.github.io/statsthinking21-core-site/comparing-means.html)
+	- Jan Vanhove: Chapters 12, 13
 	- Jan Vanhove: Teil III
 - Important concepts:
+	- contingency table, chi-squared test
 	- general linear model, t-test, anova
 - Present final project
 	- Only for those who choose to do a Modulpruefung
 - Datacamp:
-	- [Correlation and Regression in R](https://learn.datacamp.com/courses/correlation-and-regression-in-r)
 	- [Inference for Numerical Data in R](https://learn.datacamp.com/courses/inference-for-numerical-data-in-r) (optional)
 	- [Inference for Linear Regression in R](https://learn.datacamp.com/courses/inference-for-linear-regression-in-r) (optional)
 	- Modeling with Data in the Tidyverse (optional)

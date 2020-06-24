@@ -169,8 +169,8 @@ class: middle
 - Experts are intimidating
 
 ```{r echo=FALSE}
-library(countdown)
-countdown(minutes = 5)
+# library(countdown)
+# countdown(minutes = 5)
 ```
 
 ---

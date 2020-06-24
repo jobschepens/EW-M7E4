@@ -1,0 +1,5 @@
+# install.packages("adventr")
+library(adventr)
+learnr::run_tutorial("adventr_04", package = "adventr")
+learnr::run_tutorial("adventr_05", package = "adventr")
+learnr::run_tutorial("adventr_08", package = "adventr")

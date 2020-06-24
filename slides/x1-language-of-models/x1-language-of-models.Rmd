@@ -100,16 +100,8 @@ What does the `data/` mean in the code above? Hint: Where is the data file locat
 - 3,393 paintings, their prices, and descriptive details from sales catalogues over 60 variables
 
 ```{r}
-glimpse(pp)
+pp
 ```
-
----
-
-## Auctions today
-
-![](img/auction-video.png)
-
-https://www.youtube.com/watch?v=apaE1Q7r4so
 
 ---
 
@@ -118,12 +110,6 @@ https://www.youtube.com/watch?v=apaE1Q7r4so
 ![](img/old-auction.png)
 
 Pierre-Antoine de Machy, Public Sale at the Hôtel Bullion, Musée Carnavalet, Paris (18th century)
-
----
-
-## Paris auction market
-
-![](img/auction-trend-paris.png)
 
 ---
 

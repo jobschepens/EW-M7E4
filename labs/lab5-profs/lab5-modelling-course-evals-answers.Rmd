@@ -1,0 +1,293 @@
+---
+title: "Lab 5 - Professor attractiveness and course evaluations"
+subtitle: "Modelling with a single predictor"
+output: 
+  tufte::tufte_html:
+    tufte_variant: "envisioned"
+    highlight: pygments
+    css: ../lab.css
+link-citations: yes
+---
+
+```{r include=FALSE}
+library(tufte)
+library(knitr)
+options(
+  show.signif.stars = FALSE,     # for regression output
+  digits = 2
+  )
+knitr::opts_chunk$set(eval = T)
+```
+
+## Introduction
+
+Many college courses conclude by giving students the opportunity to evaluate the course and the instructor anonymously. However, the use of these student evaluations as an indicator of course quality and teaching effectiveness is often criticized because these measures may reflect the influence of non-teaching related characteristics, such as the physical appearance of the instructor. The article titled, "Beauty in the classroom: instructors’ pulchritude and putative pedagogical productivity" (Hamermesh and Parker, 2005) found that instructors who are viewed to be better looking receive higher instructional ratings. (Daniel S. Hamermesh, Amy Parker, Beauty in the classroom: instructors pulchritude and putative pedagogical productivity, Economics of Education Review, Volume 24, Issue 4, August 2005, Pages 369-376, ISSN 0272-7757, 10.1016/j.econedurev.2004.07.013. http://www.sciencedirect.com/science/article/pii/S0272775704001165.)
+
+For this assignment you will analyze the data from this study in order to learn what goes into a positive professor evaluation.
+
+The data were gathered from end of semester student evaluations for a large sample of professors from the University of Texas at Austin. In addition, six students rated the professors’ physical appearance. (This is a slightly modified version of the original data set that was released as part of the replication data for Data Analysis Using Regression and Multilevel/Hierarchical Models (Gelman and Hill, 2007).) The result is a data frame where each row contains a different course and columns represent variables about the courses and professors.
+
+# Packages
+
+In this lab we will work with the `tidyverse` and `broom` packages.
+
+```{marginfigure}
+When you install the tidyverse package, a long list of packages get installed with it. However when you load it (with the `library` function) only a few of them get loaded, e.g. `dplyr`, `ggplot2`, and `forcats`. The broom package is installed with the tidyverse, but we need to load it separately in order to make use of it.
+```
+
+```{r eval = T}
+library(tidyverse) 
+library(broom)
+```
+
+# Housekeeping
+
+## Project name: 
+
+Check the name of your assignment.
+
+## YAML: 
+
+Change the author name to your name, and knit the document.
+
+# The data
+
+In this lab you will first download the data. If you are using Rstudio Cloud, upload it to your RStudio Cloud project. Create a folder and give it a good name, such as "data". 
+
+```{r data-upload, fig.margin = TRUE, echo = FALSE, eval=TRUE, fig.width=3}
+knitr::include_graphics("img/data-upload.png")
+```
+
+- Click [here](https://github.com/jobschepens/EW-M7E4/blob/master/data/evals-mod.csv) to download the data. 
+- Navigate to the data folder in your project and upload the `evals-mod.csv` file if you are using RStudio Cloud.
+
+You can load the data as usual using the following.
+
+```{r data, eval=T}
+evals <- read_csv("data/evals-mod.csv")
+```
+
+## Codebook
+
+| Variable name    | Description 
+|:--------|:-------------------------------
+| `score` 		     | Average professor evaluation score: (1) very unsatisfactory - (5) excellent
+| `rank` 		       | Rank of professor: teaching, tenure track, tenure
+| `ethnicity` 	   | Ethnicity of professor: not minority, minority
+| `gender` 		     | Gender of professor: female, male
+| `language` 	     | Language of school where professor received education: english or non-english
+| `age` 		       | Age of professor
+| `cls_perc_eval`  | Percent of students in class who completed evaluation
+| `cls_did_eval`   | Number of students in class who completed evaluation
+| `cls_students`   | Total number of students in class
+| `cls_level` 	   | Class level: lower, upper
+| `cls_profs` 	   | Number of professors teaching sections in course in sample: single, multiple
+| `cls_credits`    | Number of credits of class: one credit (lab, PE, etc.), multi credit
+| `bty_f1lower`    | Beauty rating of professor from lower level female: (1) lowest - (10) highest
+| `bty_f1upper`    | Beauty rating of professor from upper level female: (1) lowest - (10) highest
+| `bty_f2upper`    | Beauty rating of professor from upper level female: (1) lowest - (10) highest
+| `bty_m1lower`    | Beauty rating of professor from lower level male: (1) lowest - (10) highest
+| `bty_m1upper`    | Beauty rating of professor from upper level male: (1) lowest - (10) highest
+| `bty_m2upper`    | Beauty rating of professor from upper level male: (1) lowest - (10) highest
+
+# Exercises
+
+## Part 1: Data Manipulation 
+
+```{marginfigure}
+The `rowwise` function is useful for applying mathematical operations to each row.
+```
+
+1.  Create a new variable called `bty_avg` that is the average attractiveness
+    score of the six students for each professor (`bty_f1lower` through `bty_m2upper`). 
+    Add this new variable to the `evals` data frame. Do this in one pipe, using the 
+    `rowwise` function. Incomplete code is given below to guide you in the right direction, 
+    however you will need to fill in the blanks.
+
+```{r eval=T}
+evals <- evals %>%
+  rowwise() %>%
+  mutate(bty_avg = mean( c( bty_f1lower,
+                               bty_f1upper,
+                               bty_f2upper,
+                               bty_m1lower,
+                               bty_m1upper,
+                               bty_m2upper) )) %>%
+  ungroup()
+summary(evals$bty_avg)
+```
+
+Note that we end the pipeline with `ungroup()` to remove the effect of the `rowwise` function from earlier in the pipeline. The `rowwise` function works a lot like `group_by`, except it groups the data frame one row at a time so that any operations applied to the data frame is done once per each row. This is helpful for finding the mean beauty score *for each row*. However in the remainder of the analysis we don't want to, say, calculate summary statistics for each row, or fit a model for each row. Hence we need to undo the effect of `rowwise`, which we can do with `ungroup`.
+
+## Part 2: Exploratory Data Analysis
+
+2.  Visualize the distribution of `score`. Is the distribution skewed? What does 
+    that tell you about how students rate courses? Is this what you expected to 
+    see? Why, or why not? Include any summary statistics and visualizations
+    you use in your response.
+
+The scores are negatively skewed, maybe because students tend to give either the highest or second to highest score possible. 
+
+```{r}
+glimpse(evals)
+ggplot(evals, aes(x = score)) + 
+  geom_histogram(binwidth = .1)
+```
+
+3.  Visualize and describe the relationship between `score` and the new variable you 
+    created, `bty_avg`.
+
+There seems to be almost no relationship. 
+
+```{r}
+ggplot(evals, aes(x = bty_avg, y = score)) + 
+  geom_point()
+```
+
+```{marginfigure}
+**Hint:** See the help page for the function at http://ggplot2.tidyverse.org/reference/index.html.
+```
+    
+4.  Replot the scatterplot from Exercise 3, but this time use  
+    `geom_jitter()`? What does "jitter" mean? 
+    What was misleading about the initial scatterplot?
+
+The initial plot obscured data density. 
+
+```{r}
+ggplot(evals, aes(x = bty_avg, y = score)) + 
+  geom_jitter()
+```
+
+## Part 3: Linear regression with a numerical predictor
+
+```{marginfigure}
+Linear model is in the form $\hat{y} = b_0 + b_1 x$.
+```
+
+5.  Let's see if the apparent trend in the plot is something more than
+    natural variation. Fit a linear model called `m_bty` to predict average
+    professor evaluation `score` by average beauty rating (`bty_avg`). Based on the 
+    regression output, write the linear model.
+
+$\hat{y} = 3.88 + .07 x$
+
+```{r}
+m_bty <- lm("score ~ bty_avg", data = evals)
+```
+
+6.  Replot your visualization from Exercise 3, and add the regression line to this plot
+    in orange color. Turn off the shading for the uncertainty of the line.
+
+```{r}
+ggplot(evals, aes(x = bty_avg, y = score)) + 
+  geom_jitter() + 
+  geom_smooth(method = "lm", se = F)
+```
+    
+7.  Interpret the slope of the linear model in context of the data.
+
+A positive trend. A more beautiful prof gets higher scores. 
+
+8.  Interpret the intercept of the linear model in context of the data. Comment on whether 
+    or not the intercept makes sense in this context.
+
+Since zero is not a possible rating, the intercept does not make sense. 
+    
+9.  Determine the $R^2$ of the model and interpret it in context of the data.
+
+The rating explains 3% of the total variance in scores. 
+
+```{r}
+summary(m_bty) #  0.03502,	Adjusted R-squared:  0.03293
+glance(m_bty) 
+```
+
+## Part 4: Linear regression with a categorical predictor
+
+10.  Fit a new linear model called `m_gen` to predict average professor evaluation `score` 
+    based on `gender` of the professor. Based on the regression output, write the linear 
+    model and interpret the slope and intercept in context of the data.
+
+- males have higher scores
+- the intercept is equal for both groups. 
+
+```{r}
+m_gen <- lm("score ~ gender", data = evals)
+m_gen
+glance(m_gen) 
+```
+
+11. What is the equation of the line corresponding to male professors? What is it for 
+    female professors?
+
+$\hat{y} = 4.09 + .14gender\_male$
+    
+12. Fit a new linear model called `m_rank` to predict average professor evaluation `score` 
+    based on `rank` of the professor. Based on the regression output, write the linear 
+    model and interpret the slopes and intercept in context of the data.
+
+- teaching has the highest ratings and tenured the lowest
+
+```{r}
+summary(factor(evals$rank))
+m_rank <- lm("score ~ rank", data = evals)
+m_rank
+glance(m_rank) 
+```
+    
+```{marginfigure}
+See the course slides on using the forcats package for changing the order of levels.
+```
+
+13. Create a new variable called `rank_relevel` where `"tenure track"` is the baseline level. 
+
+```{r}
+levels(factor(evals$rank))
+evals <- evals %>% mutate(rank_relevel = fct_relevel(rank, "tenure track"))
+levels(factor(evals$rank_relevel))
+```
+
+14. Fit a new linear model called `m_rank_relevel` to predict average professor evaluation 
+    `score` based on `rank_relevel` of the professor. This is the new (releveled) variable 
+    you created in Exercise 13. Based on the regression output, write the linear 
+    model and interpret the slopes and intercept in context of the data. Also determine and 
+    interpret the $R^2$ of the model.
+
+- The teaching group has higher scores and the tenured group has lower scores compared to tenure track. 
+- The rank explains about 1% of variation in scores. 
+
+```{r}
+summary(factor(evals$m_rank_relevel))
+m_rank_relevel <- lm("score ~ rank_relevel", data = evals)
+m_rank_relevel
+glance(m_rank_relevel) 
+```
+
+15. Create another new variable called `tenure_eligible` that labels `"teaching"` faculty as 
+    `"no"` and labels `"tenure track"` and `"tenured"` faculty as `"yes"`.
+
+```{r}
+evals <- evals %>% mutate(tenure_eligible = case_when(
+  rank == "teaching" ~ "no",
+  TRUE ~ "yes",
+))
+
+table(evals$tenure_eligible)
+```
+
+16. Fit a new linear model called `m_tenure_eligible` to predict average professor evaluation 
+    `score` based on `tenure_eligible`ness of the professor. This is the new (regrouped) variable 
+    you created in Exercise 15. Based on the regression output, write the linear 
+    model and interpret the slopes and intercept in context of the data. Also determine and 
+    interpret the $R^2$ of the model.
+
+Tenure eligible profs have lower ratings than teachers.
+The 2-by grouping explains slightly more variation than the 3-by grouping. 
+
+```{r}
+summary(factor(evals$tenure_eligible))
+m_tenure_eligible <- lm("score ~ tenure_eligible", data = evals)
+m_tenure_eligible
+glance(m_tenure_eligible) 
+```

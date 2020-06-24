@@ -359,8 +359,6 @@ the model.
 - The remainder of the variability is explained by variables not included in the 
 model.
 
-- $R^2$ is sometimes called the coefficient of determination.
-
 ---
 
 ## Obtaining $R^2$ in R

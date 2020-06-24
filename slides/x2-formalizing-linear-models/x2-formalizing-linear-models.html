@@ -44,7 +44,7 @@ pp &lt;- read_csv("../../data/paris-paintings.csv",
 
 ## Want to follow along?
 
-Go to RStudio Cloud -&gt; make a copy of "Modelling Paris Paintings"
+Download the "Modelling Paris Paintings" dataset  [here](https://github.com/jobschepens/EW-M7E4/blob/master/data/paris-paintings.csv)
 
 ---
 
@@ -366,8 +366,6 @@ the model.
 - The remainder of the variability is explained by variables not included in the 
 model.
 
-- `\(R^2\)` is sometimes called the coefficient of determination.
-
 ---
 
 ## Obtaining `\(R^2\)` in R
@@ -381,10 +379,10 @@ glance(m_ht_wt)
 
 ```
 ## # A tibble: 1 x 11
-##   r.squared adj.r.squared sigma statistic p.value    df  logLik    AIC
-##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;
-## 1     0.683         0.683  8.30     6749.       0     2 -11083. 22173.
-## # ... with 3 more variables: BIC &lt;dbl&gt;, deviance &lt;dbl&gt;, df.residual &lt;int&gt;
+##   r.squared adj.r.squared sigma statistic p.value    df  logLik    AIC    BIC
+##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1     0.683         0.683  8.30     6749.       0     2 -11083. 22173. 22191.
+## # ... with 2 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;
 ```
 
 ```r
