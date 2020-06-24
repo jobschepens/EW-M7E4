@@ -120,7 +120,7 @@
 	- [Professor attractiveness part 2](https://jobschepens.github.io/EW-M7E4/labs/lab6-profs2/lab6-mlr-course-evals.html), [starter Rmd file](
 	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab6-profs2/lab6-mlr-course-evals.Rmd)
 - Datacamp
-	- [Correlation and Regression in R](https://learn.datacamp.com/courses/correlation-and-regression-in-r)	
+	- [Correlation and Regression in R](https://learn.datacamp.com/courses/correlation-and-regression-in-r)	(optional)
 
 ## Week 11 (01.07.2020): Probability, Sampling, Confidence Intervals
 - Slides

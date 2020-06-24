@@ -429,8 +429,10 @@ $$ \widehat{log(price)} = 4.67 + 0.02 Width $$
 --
 - For each additional inch the painting is wider, the log price of the
 painting is expected to be higher, on average, by 0.02 livres.
+
 --
 - which is not a very useful statement...
+
 ---
 
 ## Working with logs
@@ -585,15 +587,18 @@ lm(log(price) ~ Width_in, data = pp_wt_lt_100) %&gt;%
 
 - Non-constant variance is one of the most common model violations, however it 
 is usually fixable by transforming the response (y) variable.
+
 --
 - The most common transformation when the response variable is right skewed is 
 the log transform: `\(log(y)\)`, especially useful when the response variable is 
 (extremely) right skewed.
+
 --
 - This transformation is also useful for variance stabilization.
 --
 - When using a log transformation on the response variable the interpretation of 
 the slope changes: *"For each unit increase in x, y is expected on average to be higher/lower &lt;br&gt; by a factor of `\(e^{b_1}\)`."*
+
 --
 - Another useful transformation is the square root: `\(\sqrt{y}\)`, especially 
 useful when the response variable is counts.
