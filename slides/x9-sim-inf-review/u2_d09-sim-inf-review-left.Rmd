@@ -1,0 +1,211 @@
+class: center, middle
+
+# Notes from HW 3
+
+---
+
+## Recap: visualize and describe
+
+.question[
+When asked to visualize and describe distribution(s), how do you decide what visualizations to make?
+]
+
+--
+
+- Make all possible visualizations for the relevant variables, e.g. 
+    - for a single numerical variable, try a histogram as well as a box plot and a density plot.
+    - for one numerical and one categorical variable, try density plots, violin plots, faceted histograms, and side-by-side box plots.
+- This doesn't mean include **all** of these in your final write up. Try them out, see which one(s) help tell a story, and include that/those only in your write up. But you won't know without trying which one(s) to include.
+
+---
+
+## Recap: visualize and describe
+
+.question[
+When asked to visualize and describe distribution(s), how do you decide what to mention in your description?
+]
+
+--
+
+- Shape, center, spread, and any unusual observations.
+
+Simply stating features isn't sufficient, dig deeper to see why these features are apparent, e.g.
+- if the distribution is bimodal, determine where the peaks are and try to figure out why these show up as two prominent peaks (are there two prominent groups in your data, what are they?)
+- if there are outliers, and the observations are identifiable, identify the outliers and try to figure out why these observations stand out as outliers (the answer might be in the data, or might req)
+
+---
+
+## HW 3: Season and bike rentals
+
+Prompt: Create a visualization displaying the relationship between bike rentals and season. Interpret the plot in context of the data.
+
+---
+
+## Option 1
+
+```{r load-data, message=FALSE, echo=FALSE}
+bike <- read_csv("../../data/bikeshare-day.csv") %>%
+  mutate(
+    season = case_when(
+      season == 1 ~ "winter",
+      season == 2 ~ "spring",
+      season == 3 ~ "summer",
+      season == 4 ~ "fall"
+    ),
+    season = fct_relevel(season, "spring", "summer", "fall", "winter"),
+    temp_raw = temp * 41,
+    atemp_raw = atemp * 50,
+    hum_raw = hum * 100,
+    windspeed_raw = windspeed * 67,
+      weathersit = case_when(
+      weathersit == 1 ~ "clear",
+      weathersit == 2 ~ "mist",
+      weathersit == 3 ~ "light precipitation"
+      # no 4s in the data
+    ),
+    weathersit = fct_relevel(weathersit, "clear", "mist", "light precipitation")
+    # also ok if they made winter baseline
+  )
+```
+
+```{r bike-hist-facet}
+ggplot(data = bike, aes(x = cnt)) +
+  geom_histogram(binwidth = 1000) +
+  facet_grid(. ~ season)
+```
+
+---
+
+## Option 2
+
+```{r bike-dens}
+ggplot(data = bike, aes(x = cnt, color = season, fill = season)) +
+  geom_density(alpha = 0.5)
+```
+
+---
+
+## Option 3
+
+Daily bike rentals are highest on a typical summer day and lowest on a typical winter day. The variablity of daily bike rentals are somewhat consistent across seasons, but lowest in the summer. There is a high outlier in the winter, and low outlier in the fall.
+
+```{r bike-box}
+ggplot(data = bike, aes(x = season, y = cnt)) +
+  geom_boxplot()
+```
+
+---
+
+## Ok, but not satisfying
+
+- The observations in this dataset are recognizable days.
+- First, drill down and identify what they sre.
+- Then, try to figure out why these observations stand out as outliers.
+- It's possible you won't be able to, but you should try.
+
+---
+
+## High outlier in the winter
+
+```{r}
+bike %>%
+  filter(season == "winter") %>%
+  summarise(min = max(cnt), day_min = dteday[which.max(cnt)])
+```
+
+--
+
+.question[
+What happened on March 17, 2012 in Washington DC? If you don't know, google it!
+]
+
+---
+
+![March 17, 2012](img/dc-03-17-2012.png)
+---
+
+## Low outlier in the fall
+
+```{r}
+bike %>%
+  filter(season == "fall") %>%
+  summarise(min = min(cnt), day_min = dteday[which.min(cnt)])
+```
+
+--
+
+.question[
+What happened on October 29, 2012 in Washington DC? If you don't know, google it!
+]
+
+---
+
+![October 10, 2012](img/dc-10-29-2012.png)
+
+---
+
+## Details matter
+
+.question[
+Which of the following is a more informative analysis?
+
+(a) There is a high outlier in the winter, and low outlier in the fall.
+
+(b) There is a low outlier in the winter, on St. Patrick's Day. And a low outlier in the fall, on the day Hurricane Sandy hit DC. 
+]
+
+---
+
+## Interpreting regression coefficients
+
+--
+
+- For a model with a single predictor: "For each unit increase in $x$, $y$ is expected to be higher/lower by $b_1$, on average."
+--
+
+- For a model with a multiple predictors: "**All else held constant**,for each unit increase in $x_1$, $y$ is expected to be higher/lower by $b_1$, on average."
+--
+
+    - "All else" = all other variables **in** the model.
+---
+
+## 
+
+.question[
+Interpret the coefficient of holiday.
+]
+
+```{r m_full, echo=FALSE}
+m_full <- lm(cnt ~ season + yr + holiday + workingday + weathersit + temp_raw + 
+                   atemp_raw + hum_raw + windspeed_raw + atemp_raw * holiday, 
+                   data = bike)
+m_full %>%
+  tidy() %>%
+  select(term, estimate) %>%
+  mutate(estimate = round(estimate, 3))
+```
+
+--
+
+All else held constant, daily bike rentals are expected to be lower on holidays by 1384, on average, compared to non-holiday days.
+
+---
+
+## 
+
+.question[
+Discuss what makes for a good day to bike in DC.
+]
+
+```{r echo=FALSE}
+m_full %>%
+  tidy() %>%
+  select(term, estimate) %>%
+  mutate(estimate = round(estimate, 3))
+```
+
+--
+
+With everything else being the same, Fall days are more popular for bike rentals than days in any other season. Alternatively, with everything else being constant, days with lower humidity are better for biking than days with higher humidity.
+
+---

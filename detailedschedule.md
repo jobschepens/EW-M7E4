@@ -122,18 +122,19 @@
 - Datacamp
 	- [Correlation and Regression in R](https://learn.datacamp.com/courses/correlation-and-regression-in-r)	(optional)
 
-## Week 11 (01.07.2020): Probability, Sampling, Confidence Intervals
+## Week 11 (01.07.2020): Sampling, Confidence Intervals
 - Slides
-	- confidence intervals
+	- [1](https://jobschepens.github.io/EW-M7E4/slides/x5-predict-validate/x5-predict-validate.html)
+	- [2](https://jobschepens.github.io/EW-M7E4/slides/x6-bootstrap/u2_d06-bootstrap.html)
 - Read:
-	- [Russel Poldrack - 6 Probability](https://statsthinking21.github.io/statsthinking21-core-site/probability.html)
-	- [Russel Poldrack - 7 Sampling](https://statsthinking21.github.io/statsthinking21-core-site/sampling.html)
 	- [Modern Dive - Chapter 7 on Sampling](https://moderndive.com/7-sampling.html)
 	- [Modern Dive - Chapter 8 on Confidence Intervals](https://moderndive.com/8-confidence-intervals.html)
+	- [Russel Poldrack - 6 Probability](https://statsthinking21.github.io/statsthinking21-core-site/probability.html)
+	- [Russel Poldrack - 7 Sampling](https://statsthinking21.github.io/statsthinking21-core-site/sampling.html)
 	- Jan Vanhove: Chapters 4 and 5
 - Important concepts:
-	- relative frequency, conditional probability
-	- population, sample, sampling error, standard error, confidence interval
+	- Overfitting, prediction
+	- bootstrap, inference, confidence interval, population, sample
 - Datacamp:
 	- [Foundations of Inference in R](https://learn.datacamp.com/courses/foundations-of-inference-in-r)
 	- Foundations of Probability in R (optional)
@@ -142,16 +143,19 @@
 
 ## Week 12 (08.07.2020): Hypothesis testing
 - Slides
-	- H0, p-value
-	- overview
+	- [1](https://jobschepens.github.io/EW-M7E4/slides/x7-sim-test/u2_d07-sim-test.html)
+	- [2](https://jobschepens.github.io/EW-M7E4/slides/x8-inf-overview/u2_d08-inf-overview.html)
+	- [3](https://jobschepens.github.io/EW-M7E4/slides/x9-sim-inf-review/u2_d09-sim-inf-review.html)
 - Read:
 	- [Russel Poldrack: Chapter 9 on Hypothesis Testing](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html)
 	- [Modern Dive - Chapter 9 on Hypothesis Testing](https://moderndive.com/9-hypothesis-testing.html)
 	- Jan Vanhove: Chapter 6
 - Important concepts:
-	- null hypothesis statistical testing, p-value, type 1 and type 2 error, power, (effect size)
+	- null hypothesis statistical testing, p-value
+	- sampling error, standard error
 - Lab
-	- Hypothesis testing
+	- [Hypothesis testing](https://jobschepens.github.io/EW-M7E4/labs/lab7-hyptest/lab7-inference.html), [starter Rmd file](
+	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab7-hyptest/lab7-inference.Rmd)
 - Datacamp:
 	- Inference for Categorical Data in R
 
@@ -169,6 +173,7 @@
 - Important concepts:
 	- contingency table, chi-squared test
 	- general linear model, t-test, anova
+	- type 1 and type 2 error, power, (effect size)
 - Present final project
 	- Only for those who choose to do a Modulpruefung
 - Datacamp:
@@ -176,26 +181,8 @@
 	- [Inference for Linear Regression in R](https://learn.datacamp.com/courses/inference-for-linear-regression-in-r) (optional)
 	- Modeling with Data in the Tidyverse (optional)
 	- Multiple and Logistic Regression in R (optional)
+	- Communicating with Data in the Tidyverse
 
 
-## Bonus 1: Modeling  
-- Read: R4DS: 
-	- R4DS: TEIL IV - Modellieren 
-		- 18 Grundlagen der Modellierung mit modelr 
-		- 19 Modelle erstellen
-		- 20 Viele Modelle mit purrr und broom (optional)
-- Datacamp:
-	- Modeling with Data in the Tidyverse
-- A special end of stats section assignment
-
-## Bonus 2: Kommunizieren
-- Read
-	- Russel Poldrack: Chapter 17 Doing reproducible research
-	- R4DS: 
-		- 21 R Markdown
-		- 22 Grafik für Kommunikation mit ggplot2
-		- 23 R-Markdown-Formate
-		- 24 R-Markdown-Workflow
-- Datacamp:
-	- 19 Communicating with Data in the Tidyverse
+## Modulpruefung
 	- Reproducible report assignment

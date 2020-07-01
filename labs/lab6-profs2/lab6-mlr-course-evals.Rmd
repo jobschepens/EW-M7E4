@@ -75,12 +75,33 @@ evals <- read_csv("data/evals-mod.csv")
    professor evaluation `score` based on average beauty rating (`bty_avg`) only. Write the 
    linear model, and note the $R^2$ and the adjusted $R^2$.
 
+```{r}
+evals <- evals %>%
+  rowwise() %>%
+  mutate(bty_avg = mean( c( bty_f1lower,
+                               bty_f1upper,
+                               bty_f2upper,
+                               bty_m1lower,
+                               bty_m1upper,
+                               bty_m2upper) )) %>%
+  ungroup()
+summary(evals$bty_avg)
+m_bty <- lm("score ~ bty_avg", data = evals)
+glance(m_bty)
+```
+
+
 ## Part 2: Multiple linear regression
 
 2. Fit a linear model (one you have fit before): `m_bty_gen`, predicting average
    professor evaluation `score` based on average beauty rating (`bty_avg`) and `gender`. 
    Write the linear model, and note the $R^2$ and the adjusted $R^2$.
    
+```{r}
+m_bty_gen <- lm("score ~ bty_avg + gender", data = evals)
+glance(m_bty_gen)
+```
+  
 3. Interpret the slope and intercept of `m_bty_gen` in context of the data.
 
 4. What percent of the variability in `score` is explained by the model `m_bty_gen`.

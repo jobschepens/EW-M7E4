@@ -1,0 +1,31 @@
+
+---
+
+## Simulation setup
+
+1. A regular deck of cards is comprised of 52 cards: 4 aces, 4 of numbers 2-10, 4 jacks, 4 queens, and 4 kings.
+
+2. Take out two aces from the deck of cards and set them aside.
+
+3. The remaining 50 playing cards to represent each participant in the study:
+    - 14 face cards (including the 2 aces) represent the people who yawn.
+    - 36 non-face cards represent the people who don't yawn.
+
+---
+
+## Running the simulation
+
+1. Shuffle the 50 cards at least 7 times<sup>1</sup> to ensure that the cards counted out are from a random process.
+
+2. Count out the top 16 cards and set them aside. These cards represent the people in the control group.
+
+3. Out of the remaining 34 cards (treatment group) count the number of face cards (the number of people who yawned in the treatment group).
+
+4. Calculate the difference in proportions of yawners (treatment - control), and plot it 
+on the board.
+
+5. Mark the difference you find on the dot plot on the board.
+
+.footnote[
+[1] http://www.dartmouth.edu/~chance/course/topics/winning_number.html
+]
