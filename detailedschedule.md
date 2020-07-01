@@ -135,6 +135,8 @@
 - Important concepts:
 	- Overfitting, prediction
 	- bootstrap, inference, confidence interval, population, sample
+- Lab
+	- [Answers Lab 6 - Professor attractiveness part 2](https://jobschepens.github.io/EW-M7E4/labs/lab6-profs2/lab6-mlr-course-evals-answers.html)
 - Datacamp:
 	- [Foundations of Inference in R](https://learn.datacamp.com/courses/foundations-of-inference-in-r)
 	- Foundations of Probability in R (optional)
