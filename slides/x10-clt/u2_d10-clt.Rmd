@@ -49,30 +49,6 @@ dev.off <- function(){
 ggplot2::theme_set(ggplot2::theme_bw())
 ```
 
-
-## Announcements
-
-- Midterm assigned on Monday, due Friday at noon
-    - Mostly modeling + inference
-    - But also some exploratory data analysis
-
-- Project proposal due tomorrow -- any questions?
-
----
-
-## 
-
-.question[
-What is the significance of the year 2020 in the US? And why am I asking this question today?
-]
-
---
-
-![](img/10b/ap-census-tweet.png)
-
-
----
-
 class: center, middle
 
 # Sample Statistics and Sampling Distributions
@@ -84,13 +60,9 @@ class: center, middle
 - Means:
     - Population: mean = $\mu$, standard deviation = $\sigma$
     - Sample: mean = $\bar{x}$, standard deviation = $s$
-
 - Proportions:
     - Population: $p$
     - Sample: $\hat{p}$
-    
-<br/>    
-
 - Standard error: $SE$
 
 ---
@@ -99,11 +71,8 @@ class: center, middle
 
 - Each sample from the population yields a slightly different sample statistic 
 (sample mean, sample proportion, etc.)
-
 - The variability of these sample statistics is measured by the **standard error**
-
 - Previously we quantified this value via simulation
-
 - Today we talk about the theory underlying **sampling distributions**
 
 ---

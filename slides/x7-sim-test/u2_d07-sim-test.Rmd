@@ -16,7 +16,10 @@ library(tidyverse)
 library(broom)
 library(knitr)
 library(DT)
+# library(learnr)
+# devtools::install_github("hadley/emo")
 library(emo)
+# install.packages("learnr")
 ```
 
 ```{r setup, include=FALSE}
@@ -139,7 +142,6 @@ Complication rate for this consultant is **lower** than the US average of 10%
 
 - **Null hypothesis**, $H_0$: Defendant is innocent
 - **Alternative hypothesis**, $H_A$: Defendant is guilty
-
 --
 
 - **Present the evidence:** Collect data
@@ -289,7 +291,7 @@ We need a way to automate this process!
 null_dist <- organ_donor %>%
   specify(response = outcome, success = "complication") %>%
   hypothesize(null = "point", p = c("complication" = 0.10, "no complication" = 0.90)) %>% 
-  generate(reps = 100, type = "simulate") %>% 
+  generate(reps = 1000, type = "simulate") %>% 
   calculate(stat = "prop")
 ```
 ]
@@ -315,7 +317,7 @@ What would you expect the center of the null distribution to be?
 
 ```{r}
 ggplot(data = null_dist, mapping = aes(x = stat)) +
-  geom_histogram(binwidth = 0.01) +
+  geom_bar(width = .01) +
   labs(title = "Null distribution")
 ```
 
@@ -332,7 +334,7 @@ observed sample proportion?
 
 ```{r echo=FALSE}
 ggplot(data = null_dist, mapping = aes(x = stat)) +
-  geom_histogram(binwidth = 0.01) +
+  geom_bar(width = .01) +
   labs(title = "Null distribution")
 ```
 
@@ -378,8 +380,7 @@ consultant incurs a lower complication rate than 10% (overall US complication ra
 
 ## Let's get real
 
-- 100 simulations is not sufficient
-
+- 1000 simulations is borderline sufficient
 - We usually simulate around 15,000 times to get an accurate distribution
 
 ---
@@ -387,11 +388,11 @@ consultant incurs a lower complication rate than 10% (overall US complication ra
 ## Run the test
 
 .small[
-```{r cache=TRUE}
+```{r cache=TRUE, eval = T}
 null_dist <- organ_donor %>%
   specify(response = outcome, success = "complication") %>%
   hypothesize(null = "point", p = c("complication" = 0.10, "no complication" = 0.90)) %>% 
-  generate(reps = 15000, type = "simulate") %>% 
+  generate(reps = 1500, type = "simulate") %>% 
   calculate(stat = "prop")
 ```
 ]
@@ -551,7 +552,7 @@ Does seeing someone yawn and yawning appear to be dependent?
 null_dist <- mb_yawn %>%
   specify(outcome ~ group, success = "yawn") %>%
   hypothesize(null = "independence") %>%
-  generate(100, type = "permute") %>%
+  generate(1000, type = "permute") %>%
   calculate(stat = "diff in props", order = c("treatment", "control"))
 ```
 ]
@@ -569,7 +570,7 @@ null distribution to be?
 
 ```{r}
 ggplot(data = null_dist, mapping = aes(x = stat)) +
-  geom_histogram(binwidth = 0.05) +
+  geom_bar() + 
   labs(title = "Null distribution")
 ```
 
@@ -585,7 +586,7 @@ as the observed difference in sample proportions?
 
 ```{r echo=FALSE}
 ggplot(data = null_dist, mapping = aes(x = stat)) +
-  geom_histogram(binwidth = 0.05) +
+  geom_bar() + 
   labs(title = "Null distribution")
 ```
 

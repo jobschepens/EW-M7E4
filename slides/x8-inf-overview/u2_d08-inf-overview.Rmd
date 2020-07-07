@@ -1,10 +1,8 @@
 ---
 title: "Inference overview"
-author: "Dr. Çetinkaya-Rundel"
 output:
   xaringan::moon_reader:
     css: "../slides.css"
-    logo: img/sta199-logo-hex.png
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -17,7 +15,9 @@ library(tidyverse)
 library(broom)
 library(knitr)
 library(DT)
+# library(learnr)
 library(emo)
+# install.packages("openintro")
 library(openintro)
 ```
 
@@ -47,26 +47,6 @@ dev.off <- function(){
 # For ggplot2
 ggplot2::theme_set(ggplot2::theme_bw())
 ```
-
-class: center, middle
-
-# From last time
-
----
-
-## Packages
-
-```{r message=FALSE}
-library(tidyverse)
-library(infer)
-```
-
-
----
-
-# From last time - Testing for independence
-
----
 
 ## Study results
 
@@ -151,8 +131,8 @@ null_dist <- mb_yawn %>%
 
 ```{r eval=FALSE}
 mb_yawn %>%
-{{  specify(response = outcome, explanatory = group, 
-          success = "yawn") }}
+    specify(response = outcome, explanatory = group, 
+          success = "yawn")
 ```
 ]
 
@@ -256,7 +236,7 @@ null distribution to be?
 
 ```{r}
 ggplot(data = null_dist, mapping = aes(x = stat)) +
-  geom_histogram(binwidth = 0.05) +
+  geom_bar() + 
   labs(title = "Null distribution")
 ```
 
@@ -272,7 +252,7 @@ as the observed difference in sample proportions?
 
 ```{r echo=FALSE}
 ggplot(data = null_dist, mapping = aes(x = stat)) +
-  geom_histogram(binwidth = 0.05) +
+  geom_bar() + 
   labs(title = "Null distribution")
 ```
 
@@ -313,7 +293,10 @@ class: center, middle
 ## What do you want to do?
 
 - Estimation -> Confidence interval
+  - bootstrap: take x samples randomly from the sample with replication 
 - Decision -> Hypothesis test
+  - simulate: take x samples randomly from a theoretical distribution with replication (e.g. for testing ig a proportion is different from a given value)
+  - permute: shuffle the sample and reassign (re-assign labels) for testing two proportions
 - First step: Ask the following questions
   1. How many variables?
   2. What types of variables?
@@ -332,23 +315,7 @@ class: center, middle
 - Bootstrap
 - Bounds: cutoff values for the middle XX% of the distribution
 - Interpretation: We are XX% confident that the true population parameter is in the interval.
-- Definition of confidence level: XX% of random samples of size n are expected to produce confidence intervals that contain the true population parameter.
 - `infer::generate(reps, type = "bootstrap")`
-
----
-
-## Confidence intervals exercises
-
-.small[
-.question[
-`r emo::ji("busts_in_silhouette")` Describe the simulation process for estimating the parameter
-
-- Note any assumptions you make in terms of sample size, observed sample statistic, etc.
-- Imagine using index cards or chips to represent the data. 
-- Specify whether the simulation type would be bootstrap, simulate, or permute.
-  - bootstrap: take x samples from the sample with replication 
-  - simulate: draw x samples randomly from a theoretical distribution, e.g. binomial
-  - permute: shuffle the sample and reassign (re-assign labels)
 
 ---
 
@@ -360,26 +327,26 @@ class: center, middle
 
 ---
 
-## Sample size and width of intervals
+## Number of observation decreases width of intervals
 
 ```{r echo = FALSE, warning=FALSE, message=FALSE, fig.width=10, fig.height=7}
 set.seed(20171107)
 acs_emp <- acs12 %>% filter(employment == "employed", income > 0)
 acs_10 <- acs_emp %>% sample_n(10) %>%
   specify(response = income) %>%
-  generate(1000, type = "bootstrap") %>%
+  generate(5000, type = "bootstrap") %>%
   calculate(stat = "median")
 acs_100 <- acs_emp %>% sample_n(100) %>%
   specify(response = income) %>%
-  generate(1000, type = "bootstrap") %>%
+  generate(5000, type = "bootstrap") %>%
   calculate(stat = "median")
 acs_500 <- acs_emp %>% sample_n(500) %>%
   specify(response = income) %>%
-  generate(1000, type = "bootstrap") %>%
+  generate(5000, type = "bootstrap") %>%
   calculate(stat = "median")
-p1 <- ggplot(acs_10, aes(x = stat)) + geom_histogram(binwidth = 5000) + xlim(0, 120000) + ggtitle("Sample size = 10")
-p2 <- ggplot(acs_100, aes(x = stat)) + geom_histogram(binwidth = 5000) + xlim(0, 120000) + ggtitle("Sample size = 100")
-p3 <- ggplot(acs_500, aes(x = stat)) + geom_histogram(binwidth = 5000) + xlim(0, 120000) + ggtitle("Sample size = 500")
+p1 <- ggplot(acs_10, aes(x = stat)) + geom_bar() + xlim(0, 120000) + ggtitle("Sample size = 10")
+p2 <- ggplot(acs_100, aes(x = stat)) + geom_bar() + xlim(0, 120000) + ggtitle("Sample size = 100")
+p3 <- ggplot(acs_500, aes(x = stat)) + geom_bar() + xlim(0, 120000) + ggtitle("Sample size = 500")
 gridExtra::grid.arrange(p1, p2, p3, ncol = 1)
 ```
 
@@ -413,8 +380,8 @@ text(x = 3, y = 0.05, "0.05", col = "gray", cex = 1.5)
 `r emo::ji("bust_in_silhouette")` Which of the following is more informative: 
 
 <ul>
-<li> The difference in price of a gallon of milk between Whole Foods and Harris Teeter is 30 cents.
-<li> A gallon of milk costs 30 cents more at Whole Foods compared to Harris Teeter.
+<li> The difference in price of a liter of milk between Rewe and Aldi is 30 cents.
+<li> A liter of milk costs 30 cents more at Rewe compared to Aldi.
 </ul>
 </div>
 ]
@@ -440,7 +407,7 @@ class: center, middle
 - Calculate the p-value.
 - Make a conclusion, about the hypotheses, in context of the data and the research question.
 - `infer::hypothesize(null = "point")` and 
-  - `infer::generate(reps, type = "simulate")` or 
+  - `infer::generate(reps, type = "simulate")`  
   - `infer::generate(reps, type = "bootstrap")`
 - `infer::hypothesize(null = "independence")` and 
   - `infer::generate(reps, type = "permute")`
@@ -453,6 +420,7 @@ class: center, middle
 .question[
 `r emo::ji("busts_in_silhouette")`
 Describe the simulation process for tesing for the parameter
+]]
 
 - Note any assumptions you make in terms of sample size, observed sample statistic, etc.
 - Imagine using index cards or chips to represent the data. 
@@ -476,21 +444,4 @@ Describe the simulation process for tesing for the parameter
 - Alternative hypothesis: Defendant is guilty
 
 Which is worse: Type 1 or Type 2 error?
-]
-
----
-
-## Probabilities of testing errors
-
-- P(Type 1 error) = $\alpha$
-- P(Type 2 error) = 1 - Power
-- Power = P(correctly rejecting the null hypothesis)
-
---
-
-.question[
-`r emo::ji("busts_in_silhouette")` Fill in the blanks in terms of correctly/incorrectly rejecting/failing to reject the null hypothesis:
-
-- $\alpha$ is the probability of ______.
-- 1 - Power is the probability of ______.
 ]
