@@ -162,7 +162,7 @@
 ## Week 13 (15.07.2020): Recap
 - Lab
 	- [Hypothesis testing](https://jobschepens.github.io/EW-M7E4/labs/lab7-hyptest/lab7-inference.html), [starter Rmd file](
-	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab7-hyptest/lab7-inference.Rmd)
+	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab7-hyptest/lab7-inference.Rmd), [answers](https://jobschepens.github.io/EW-M7E4/labs/lab7-hyptest/lab7-inference-answers.html)
 - Read:
 	- [Modern Dive - Chapter 10 on Inference](https://moderndive.com/10-inference-for-regression.html)
 	- [Russel Poldrack: Chapters 12 Modeling categorical relationships](https://statsthinking21.github.io/statsthinking21-core-site/modeling-categorical-relationships.html)
