@@ -123,7 +123,6 @@ Complication rate for this consultant is **lower** than the US average of 10%
 
 - **Null hypothesis**, `\(H_0\)`: Defendant is innocent
 - **Alternative hypothesis**, `\(H_A\)`: Defendant is guilty
-
 --
 
 - **Present the evidence:** Collect data
@@ -257,14 +256,14 @@ We need a way to automate this process!
 null_dist &lt;- organ_donor %&gt;%
   specify(response = outcome, success = "complication") %&gt;%
   hypothesize(null = "point", p = c("complication" = 0.10, "no complication" = 0.90)) %&gt;% 
-  generate(reps = 100, type = "simulate") %&gt;% 
+  generate(reps = 1000, type = "simulate") %&gt;% 
   calculate(stat = "prop")
 ```
 ]
 
 
 ```
-## # A tibble: 100 x 2
+## # A tibble: 1,000 x 2
 ##    replicate  stat
 ##        &lt;dbl&gt; &lt;dbl&gt;
 ##  1         1 0.161
@@ -277,7 +276,7 @@ null_dist &lt;- organ_donor %&gt;%
 ##  8         8 0.097
 ##  9         9 0.161
 ## 10        10 0.048
-## # ... with 90 more rows
+## # ... with 990 more rows
 ```
 
 
@@ -294,7 +293,7 @@ What would you expect the center of the null distribution to be?
 
 ```r
 ggplot(data = null_dist, mapping = aes(x = stat)) +
-  geom_histogram(binwidth = 0.01) +
+  geom_bar(width = .01) +
   labs(title = "Null distribution")
 ```
 
@@ -328,7 +327,7 @@ null_dist %&gt;%
 ## # A tibble: 1 x 1
 ##   p_value
 ##     &lt;dbl&gt;
-## 1    0.12
+## 1   0.125
 ```
 
 
@@ -363,8 +362,7 @@ consultant incurs a lower complication rate than 10% (overall US complication ra
 
 ## Let's get real
 
-- 100 simulations is not sufficient
-
+- 1000 simulations is borderline sufficient
 - We usually simulate around 15,000 times to get an accurate distribution
 
 ---
@@ -377,7 +375,7 @@ consultant incurs a lower complication rate than 10% (overall US complication ra
 null_dist &lt;- organ_donor %&gt;%
   specify(response = outcome, success = "complication") %&gt;%
   hypothesize(null = "point", p = c("complication" = 0.10, "no complication" = 0.90)) %&gt;% 
-  generate(reps = 15000, type = "simulate") %&gt;% 
+  generate(reps = 1500, type = "simulate") %&gt;% 
   calculate(stat = "prop")
 ```
 ]
@@ -406,7 +404,7 @@ null_dist %&gt;%
 ## # A tibble: 1 x 1
 ##   p_value
 ##     &lt;dbl&gt;
-## 1   0.119
+## 1   0.131
 ```
 ]
 
@@ -579,7 +577,7 @@ Does seeing someone yawn and yawning appear to be dependent?
 null_dist &lt;- mb_yawn %&gt;%
   specify(outcome ~ group, success = "yawn") %&gt;%
   hypothesize(null = "independence") %&gt;%
-  generate(100, type = "permute") %&gt;%
+  generate(1000, type = "permute") %&gt;%
   calculate(stat = "diff in props", order = c("treatment", "control"))
 ```
 ]
@@ -598,7 +596,7 @@ null distribution to be?
 
 ```r
 ggplot(data = null_dist, mapping = aes(x = stat)) +
-  geom_histogram(binwidth = 0.05) +
+  geom_bar() + 
   labs(title = "Null distribution")
 ```
 
@@ -631,7 +629,7 @@ null_dist %&gt;%
 ## # A tibble: 1 x 1
 ##   p_value
 ##     &lt;dbl&gt;
-## 1    0.49
+## 1   0.491
 ```
 
 ---

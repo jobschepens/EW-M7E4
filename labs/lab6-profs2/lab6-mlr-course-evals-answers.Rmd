@@ -1,6 +1,7 @@
 ---
 title: "Lab 6 - Professor attractiveness and course evaluations, Pt. 2"
 subtitle: "Modelling with multiple predictors"
+author: Job Schepens
 output: 
   tufte::tufte_html:
     tufte_variant: "envisioned"
@@ -10,6 +11,7 @@ link-citations: yes
 ---
 
 ```{r include=FALSE}
+# install.packages("tufte")
 library(tufte)
 library(knitr)
 options(
@@ -40,7 +42,7 @@ library(broom)
 
 ## Project name: 
 
-Update the name of your project to match the lab's title.
+Update the name of your project to match the labs title.
 
 ## YAML: 
 
@@ -61,7 +63,7 @@ knitr::include_graphics("img/data-upload.png")
 You can load the data as usual using the following.
 
 ```{r data, eval=T}
-evals <- read_csv("data/evals-mod.csv")
+evals <- read_csv("../../data/evals-mod.csv")
 ```
 
 
@@ -69,40 +71,102 @@ evals <- read_csv("data/evals-mod.csv")
 
 1. Load the data by including the appropriate code in your R Markdown file.
 
+```{r, eval=T}
+evals <- read_csv("../../data/evals-mod.csv")
+```
+
+
 ## Part 1: Simple linear regression
 
 2. Fit a linear model (one you have fit before): `m_bty`, predicting average
    professor evaluation `score` based on average beauty rating (`bty_avg`) only. Write the 
    linear model, and note the $R^2$ and the adjusted $R^2$.
 
+```{r}
+evals <- evals %>%
+  rowwise() %>%
+  mutate(bty_avg = mean( c( bty_f1lower,
+                               bty_f1upper,
+                               bty_f2upper,
+                               bty_m1lower,
+                               bty_m1upper,
+                               bty_m2upper) )) %>%
+  ungroup()
+m_bty <- lm("score ~ bty_avg", data = evals)
+```
+
+
 ## Part 2: Multiple linear regression
 
 2. Fit a linear model (one you have fit before): `m_bty_gen`, predicting average
    professor evaluation `score` based on average beauty rating (`bty_avg`) and `gender`. 
    Write the linear model, and note the $R^2$ and the adjusted $R^2$.
-   
+
+```{r}
+m_bty_gen <- lm("score ~ bty_avg + gender", data = evals)
+tidy(m_bty_gen)
+round(glance(m_bty_gen)$r.squared, digits = 4) * 100
+round(glance(m_bty_gen)$adj.r.squared, digits = 4) * 100
+summary(evals$bty_avg)
+```
+
 3. Interpret the slope and intercept of `m_bty_gen` in context of the data.
+
+The intercept indicates that for profs with a 0 beauty rating (assuming that that is possible) are expected to get a score of 3.75. The slope for the beauty rating is positive, indicating that profs get a better evaluation when they are more beautiful. The "slope" for gender shows that male professors get a higher score than females in general.    
 
 4. What percent of the variability in `score` is explained by the model `m_bty_gen`.
 
+5.91
+
 5.  What is the equation of the line corresponding to *just* male professors?
-    
+
+score = 3.75 + .0742 * bty_avg + .172
+
 6.  For two professors who received the same beauty rating, which gender tends 
     to have the higher course evaluation score?
+
+male
     
 7. How does the relationship between beauty and evaluation score
     vary between male and female professors?
+
+The relationship for female profs is generally lower.
     
 8. How do the adjusted $R^2$ values of `m_bty_gen` and `m_bty` compare? What does this tell us 
    about how useful `gender` is in explaining the variability in evaluation scores when we 
    already have information on the beaty score of the professor.
 
+```{r}
+round(glance(m_bty)$adj.r.squared, digits = 4) * 100
+round(glance(m_bty_gen)$adj.r.squared, digits = 4) * 100
+```
+
+It seems that gender is able to add more than 2% of explained variance. 
+
 9. Compare the slopes of `bty_avg` under the two models (`m_bty` and `m_bty_gen`). Has the 
    addition of `gender` to the model changed the parameter estimate (slope) for `bty_avg`?
+
+```{r}
+round(tidy(m_bty)$estimate[2], digits = 3)
+round(tidy(m_bty_gen)$estimate[2], digits = 3)
+```
+
+The slope for the more complex model became slightly steeper. 
     
 10. Create a new model called `m_bty_rank` with `gender` removed and `rank` 
     added in. Write the equation of the linear model and interpret the slopes and intercept 
     in context of the data. 
+
+```{r}
+m_bty_rank <- lm("score ~ bty_avg + rank", data = evals)
+```
+
+score = `r round(tidy(m_bty_rank)$estimate[1], digits = 3)`
+        `r round(tidy(m_bty_rank)$estimate[2], digits = 3)` * `bty_avg` + 
+        `r round(tidy(m_bty_rank)$estimate[3], digits = 3)` * `ranktenure track` 
+        `r round(tidy(m_bty_rank)$estimate[4], digits = 3)` * `ranktenured` 
+
+The intercept indicates that for profs with a 0 beauty rating (assuming that that is possible) are expected to get a score of 3.92. The slope for the beauty rating is still positive, indicating that profs get a better evaluation when they are more beautiful. The "slopes" for tenured and tenure track profs show that they get lower scores compared to teaching profs.    
 
 ## Part 5: The search for the best model
 
@@ -112,17 +176,44 @@ Going forward, only consider the following variables as potential predictors: `r
 
 11. Which variable, on its own, would you expect to be the worst predictor of 
     evaluation scores? Why? *Hint:* Think about which variable would you 
-    expect to not have any association with the professor's score.
+    expect to not have any association with the professors score.
+
+Ethnicity?
 
 12. Check your suspicions from the previous exercise. Include the model output
     for that variable in your response.
+
+```{r}
+m_bty_tot <- lm("score ~ bty_avg + cls_students + cls_perc_eval", data = evals)
+round(glance(m_bty_tot)$adj.r.squared, digits = 4) * 100
+m_bty_tot <- lm("score ~ bty_avg + cls_students + cls_did_eval", data = evals)
+round(glance(m_bty_tot)$adj.r.squared, digits = 4) * 100
+m_bty_tot <- lm("score ~ bty_avg + cls_did_eval + cls_perc_eval", data = evals)
+round(glance(m_bty_tot)$adj.r.squared, digits = 4) * 100
+m_bty_tot <- lm("score ~ bty_avg + cls_students + cls_did_eval + cls_perc_eval" , data = evals)
+round(glance(m_bty_tot)$adj.r.squared, digits = 4) * 100
+```
+
+The model with all three variables is not (much) better than any of the models with two of the three variables.  
+
     
 13. Suppose you wanted to fit a full model with the variables listed above. If 
     you are already going to include `cls_perc_eval` and `cls_students`, which variable 
     should you not include as an additional predictor? Why?
 
+`cls_did_eval` would be redundant. 
+
 14. Fit a full model with all predictors listed above (except for the one you decided to 
     exclude) in the previous question.
+
+```{r}
+m_bty_tot <- lm("score ~ bty_avg + rank + ethnicity + 
+                gender + language + age + cls_perc_eval + 
+                cls_did_eval + cls_students + cls_level + cls_profs + cls_credits + bty_avg", 
+                data = evals)
+round(glance(m_bty_tot)$adj.r.squared, digits = 4) * 100
+```
+
 
 15. Using backward-selection with adjusted R-squared as the selection 
     criterion, determine the *best* model. You do not need to show all 
@@ -130,12 +221,29 @@ Going forward, only consider the following variables as potential predictors: `r
     write out the linear model for predicting score based on the final 
     model you settle on.
 
+```{r}
+m_bty_tot <- lm("score ~ bty_avg + ethnicity + 
+                gender + cls_perc_eval + 
+                 cls_students + cls_credits", 
+                data = evals)
+round(glance(m_bty_tot)$adj.r.squared, digits = 4) * 100
+```
+
 16. Interpret the slopes of one numerical and one categorical predictor based on your final model.
+
+```{r}
+tidy(m_bty_tot)
+``` 
+
+The more students in class, the higher the evaluation. Professorts with a non-minority ethnicity also get higher ratings. 
 
 17. Based on your final model, describe the characteristics of a professor and 
     course at University of Texas at Austin that would be associated with a high
     evaluation score.
 
+Male professors with minority backgrounds, high beauty ratings, in large one-credit classes where relative many students complete the evaluation survey get the highest ratings. 
+
 18. Would you be comfortable generalizing your conclusions to apply to professors
     generally (at any university)? Why or why not?
-    
+
+In order to generalize, it would be important to collect data at multiple universities. 

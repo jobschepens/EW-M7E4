@@ -135,6 +135,8 @@
 - Important concepts:
 	- Overfitting, prediction
 	- bootstrap, inference, confidence interval, population, sample
+- Lab
+	- [Answers Lab 6 - Professor attractiveness part 2](https://jobschepens.github.io/EW-M7E4/labs/lab6-profs2/lab6-mlr-course-evals-answers.html)
 - Datacamp:
 	- [Foundations of Inference in R](https://learn.datacamp.com/courses/foundations-of-inference-in-r)
 	- Foundations of Probability in R (optional)
@@ -151,17 +153,16 @@
 	- [Modern Dive - Chapter 9 on Hypothesis Testing](https://moderndive.com/9-hypothesis-testing.html)
 	- Jan Vanhove: Chapter 6
 - Important concepts:
-	- null hypothesis statistical testing, p-value
-	- sampling error, standard error
+	- null hypothesis significance testing (single propotion, two propotions), p-value
+	- sampling error, standard error, type 1 and type 2 error
+- Datacamp:
+	- [Inference for Categorical Data in R](https://www.datacamp.com/courses/inference-for-categorical-data-in-r?embedded=true) (optional)
+	- [Inference for Numerical Data in R](https://learn.datacamp.com/courses/inference-for-numerical-data-in-r) (optional)
+
+## Week 13 (15.07.2020): Recap
 - Lab
 	- [Hypothesis testing](https://jobschepens.github.io/EW-M7E4/labs/lab7-hyptest/lab7-inference.html), [starter Rmd file](
-	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab7-hyptest/lab7-inference.Rmd)
-- Datacamp:
-	- Inference for Categorical Data in R
-
-## Week 13 (15.07.2020): Modelling
-- Slides
-	- review
+	  https://github.com/jobschepens/EW-M7E4/blob/master/labs/lab7-hyptest/lab7-inference.Rmd), [answers](https://jobschepens.github.io/EW-M7E4/labs/lab7-hyptest/lab7-inference-answers.html)
 - Read:
 	- [Modern Dive - Chapter 10 on Inference](https://moderndive.com/10-inference-for-regression.html)
 	- [Russel Poldrack: Chapters 12 Modeling categorical relationships](https://statsthinking21.github.io/statsthinking21-core-site/modeling-categorical-relationships.html)
@@ -170,18 +171,13 @@
 	- [Russel Poldrack: Chapter 15 (comparing groups)](https://statsthinking21.github.io/statsthinking21-core-site/comparing-means.html)
 	- Jan Vanhove: Chapters 12, 13
 	- Jan Vanhove: Teil III
-- Important concepts:
-	- contingency table, chi-squared test
-	- general linear model, t-test, anova
-	- type 1 and type 2 error, power, (effect size)
 - Present final project
 	- Only for those who choose to do a Modulpruefung
 - Datacamp:
-	- [Inference for Numerical Data in R](https://learn.datacamp.com/courses/inference-for-numerical-data-in-r) (optional)
 	- [Inference for Linear Regression in R](https://learn.datacamp.com/courses/inference-for-linear-regression-in-r) (optional)
 	- Modeling with Data in the Tidyverse (optional)
 	- Multiple and Logistic Regression in R (optional)
-	- Communicating with Data in the Tidyverse
+	- Communicating with Data in the Tidyverse (optional)
 
 ## Modulpruefung
 - Modulpruefung

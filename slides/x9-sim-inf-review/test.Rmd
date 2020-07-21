@@ -1,0 +1,90 @@
+- Estimation -> Confidence interval
+  - bootstrap: draw x samples from the sample with replication 
+- Decision -> Hypothesis test
+	- bootstrap: draw x samples from the sample with replication and measure how many below stat
+  - simulate: draw x samples randomly from a theoretical distribution, e.g. binomial for testing 1 proportion
+  - permute: shuffle the sample and reassign (re-assign labels) for testing two proportions
+
+```{r}
+glimpse(ncbirths)
+
+
+inferred <- df %>%
+  specify(response, explanatory) %>% # explanatory optional
+	hypothesize(null, p, mu, med, sigma) %>% # "independence" (no options) and "point" (true prop, true mean, true median, true sd)
+  generate(reps, type) %>% # type: bootstrap, simulate, or permute
+  calculate(stat) 
+
+boot_means_shifted <- ncbirths %>%
+  filter(!is.na(weeks)) %>% # remove NAs
+  specify(response = weeks) %>%
+  hypothesize(null = "point", mu = 40) %>% # hypothesize step
+  generate(reps = 1000, type = "bootstrap") %>%
+  calculate(stat = "mean")
+
+boot_means_shifted %>%
+  filter(stat <= 38.33) %>%
+  summarise(p_value = 2 * (n() / 1000))
+```
+
+inference
+- estimate 
+  - "mean", "median", "sum", "sd", "prop", "count", 
+  - "ratio of props", "slope", and "correlation"
+- test / hypothesize: indepndence or point
+  - "diff in means", "diff in medians", "diff in props", 
+  - "Chisq", "F", "t", "z", 
+
+Do these data provide convincing evidence of a difference in length in gestation between mature and younger moms? Use a significance level of 10%.
+
+```{r}
+boot_diffs <- ncbirths %>%
+	filter(!is.na(weeks)) %>% # remove NAs
+  specify(response = weeks, explanatory = mature) %>% # explanatory optional
+	hypothesize(null = "independence") %>% # "independence" (no options) and "point" (true prop, true mean, true median, true sd)
+  generate(reps = 5000, type = "permute") %>% # type: bootstrap, simulate, or permute
+  calculate("diff in means", order = c("mature mom", "younger mom")) # "mean", "median", "sum", "sd", "prop", "count", "diff in means", "diff in medians", "diff in props", "Chisq", "F", "t", "z", "ratio of props", "slope", and "correlation".
+
+glimpse(boot_diffs)
+
+ggplot(data = boot_diffs, aes(x = stat)) +
+  geom_histogram(binwidth = 0.03) +
+  geom_vline(xintercept = 0 - .4, color = "red") +
+  geom_vline(xintercept = 0 + .4, color = "red")
+
+boot_diffs %>%
+  filter(abs(stat) >= .10 * 40) %>%
+  summarise(p_value = 1 * (n() / 5000))
+
+``` 
+
+Estimate the difference in average lengths of gestation between mature and younger moms. Use a significance level equivalent to the hypothesis test above.
+
+```{r}
+library(tidyverse)
+library(infer)
+
+boot_diffs <- ncbirths %>%
+	filter(!is.na(weeks)) %>% # remove NAs
+  specify(response = weeks, explanatory = mature) %>% # explanatory optional
+	# hypothesize(null = "independence") %>% # "independence" (no options) and "point" (true prop, true mean, true median, true sd)
+  generate(1000, type = "bootstrap") %>% # type: bootstrap, simulate, or permute
+  calculate(stat = "diff in means", order = c("mature mom", "younger mom")) # "mean", "median", "sum", "sd", "prop", "count", "diff in means", "diff in medians", "diff in props", "Chisq", "F", "t", "z", "ratio of props", "slope", and "correlation".
+
+boot_diffs %>%
+  summarize(lower_bound = quantile(stat, 0.025),
+            upper_bound = quantile(stat, 0.975))
+boot_diffs %>%
+  summarize(lower_bound = quantile(stat, 0.05),
+            upper_bound = quantile(stat, 0.95))
+``` 
+
+Do the results of the hypothesis test agree with the result of the confidence interval?
+
+```{r}
+df %>%
+  specify(response, explanatory) %>% # explanatory optional
+	hypothesize(null, p, mu, med, sigma) %>% # "independence" (no options) and "point" (true prop, true mean, true median, true sd)
+  generate(reps, type) %>% # type: bootstrap, simulate, or permute
+  calculate(stat) # "mean", "median", "sum", "sd", "prop", "count", "diff in means", "diff in medians", "diff in props", "Chisq", "F", "t", "z", "ratio of props", "slope", and "correlation".
+``` 

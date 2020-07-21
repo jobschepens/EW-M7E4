@@ -46,7 +46,7 @@ Update the name of your project to match the lab's title.
 
 In this lab we'll be generating random samples. The last thing you want is those samples to change every time you knit your document. So, you should set a seed. There's an R chunk below for this. Locate it and set the seed. 
 
-```{r, eval = F}
+```{r}
 set.seed(154)
 ```
 
@@ -80,7 +80,7 @@ variable         | description
 
 1.  What are the cases in this data set? How many cases are there in our sample?
 
-```{r, eval = F}
+```{r}
 glimpse(ncbirths)
 # cases are births
 # 1000 cases
@@ -113,20 +113,20 @@ Our alternative hypothesis should reflect the research question, i.e. some chang
 
 3. Create a filtered data frame called `ncbirths_white` that contain data only from white mothers. Then, calculate the mean of the weights of their babies.
 
-```{r, eval = F}
+```{r}
 ncbirths_white <- ncbirths %>%
-  filter(___ == "___")
-meanweight = mean(ncbirths_white$___)
+  filter(whitemom == "white")
+meanweight = mean(ncbirths_white$weight)
 meanweight
 ```
 
 
 4. Are the conditions necessary for conducting simulation based inference satisfied? Explain your reasoning.
 
-```{r, eval = F}
+```{r}
 ncbirths_white %>% 
-  ggplot(aes(x = ___)) + 
-  geom____()
+  ggplot(aes(x = weight)) + 
+  geom_density()
 
 # variance seems normally distributed, slight skew to right
 ```
@@ -142,25 +142,25 @@ Let's discuss how this test would work. Our goal is to simulate a null distribut
 
 5. Run the appropriate hypothesis test, visualize the null distribution, calculate the p-value, and interpret the results in context of the data and the hypothesis test.
 
-```{r, eval = F}
+```{r}
 
 # 1995 study value: 7.43
 mean(ncbirths_white$weight) # new value: 7.25
 # is this new value different? 
 
 boot_means_shifted <- ncbirths_white %>%
-  specify(response = ___) %>%
-  hypothesize(null = "___", mu = ___) %>% # shift step: adding 7.43-7.25 to every bootstrap
-  generate(reps = 10000, type = "___") %>%
-  calculate(stat = "___")
+  specify(response = weight) %>%
+  hypothesize(null = "point", mu = 7.43) %>% # shift step: adding 7.43-7.25 to every bootstrap
+  generate(reps = 10000, type = "bootstrap") %>%
+  calculate(stat = "mean")
 
 ggplot(data = boot_means_shifted, aes(x = stat)) +
   geom_histogram() +
-  geom_vline(xintercept = ___, color = "red") +
-  geom_vline(xintercept = ___, color = "red")
+  geom_vline(xintercept = 7.25, color = "red") +
+  geom_vline(xintercept = 7.61, color = "red")
 
 a <- boot_means_shifted %>%
-  filter(stat <= ___) 
+  filter(stat <= 7.25) 
 nrow(a)
 a %>%
   summarise(p_value = 2 * (n() / 1000))
@@ -178,18 +178,18 @@ questions.
 `weight`. What does the plot highlight about the relationship between these 
 two variables?
 
-```{r, eval = F}
+```{r}
 ncbirths_white %>% 
   filter(!is.na(habit)) %>% 
-  ggplot(aes(y = ___, color = ___)) + 
+  ggplot(aes(y = weight, color = habit)) + 
   geom_boxplot()
 # smokers have babies with lower birth weight
 ```
 
 7. Before moving forward, save a version of the dataset omitting observations where there are NAs for `habit`. You can call this version `ncbirths_habitgiven`.
 
-```{r, eval = F}
-ncbirths_habitgiven <- ncbirths_white %>% filter(!is.na(___))
+```{r}
+ncbirths_habitgiven <- ncbirths_white %>% filter(!is.na(habit))
 ```
 
 The box plots show how the medians of the two distributions compare, but we can
@@ -199,8 +199,8 @@ first group the data by the `habit` variable, and then calculate the mean
 
 ```{r habit-means, eval=FALSE}
 ncbirths_habitgiven %>%
-  group_by(___) %>%
-  summarise(mean_weight = mean(___))
+  group_by(habit) %>%
+  summarise(mean_weight = mean(weight))
 ```
 
 There is an observed difference, but is this difference statistically 
@@ -215,10 +215,10 @@ Ha: the average weights of babies born to smoking and non-smoking mothers are di
 
 8. Are the conditions necessary for conducting simulation based inference satisfied? Explain your reasoning.
 
-```{r, eval = F}
+```{r}
 ncbirths_white %>% 
-  filter(!is.na(___)) %>% 
-  ggplot(aes(x = ___, fill = ___)) + 
+  filter(!is.na(habit)) %>% 
+  ggplot(aes(x = weight, fill = habit)) + 
   geom_density(alpha = .5)
 
 # no obvious differences in variance
@@ -226,25 +226,25 @@ ncbirths_white %>%
 
 9. Run the appropriate hypothesis test, calculate the p-value, and interpret the results in context of the data and the hypothesis test.
 
-```{r, eval = F}
+```{r}
 boot_means <- ncbirths_habitgiven%>%
-  specify(response = ___, explanatory = ___) %>%
-  hypothesize(null = "___") %>% # shift step: adding 7.43-7.25 to every bootstrap
-  generate(reps = 10000, type = "___") %>%
-  calculate(stat = "___", order = c("___", "___"))
+  specify(response = weight, explanatory = habit) %>%
+  hypothesize(null = "independence") %>% # shift step: adding 7.43-7.25 to every bootstrap
+  generate(reps = 10000, type = "permute") %>%
+  calculate(stat = "diff in means", order = c("nonsmoker", "smoker"))
 
 ggplot(data = boot_means, aes(x = stat)) +
   geom_histogram() +
-  geom_vline(xintercept = ___, color = "red") +
-  geom_vline(xintercept = ___, color = "red")
+  geom_vline(xintercept = -.51, color = "red") +
+  geom_vline(xintercept = .51, color = "red")
 
 m <- ncbirths_habitgiven %>%
-  group_by(___) %>%
-  summarise(mean_weight = mean(___))
+  group_by(habit) %>%
+  summarise(mean_weight = mean(weight))
 m$mean_weight[1] - m$mean_weight[2]
 
 a <- boot_means %>%
-  filter(stat >= ___) 
+  filter(stat >= .512) 
 nrow(a)
 a %>%
   summarise(p_value = n() / 1000)
@@ -253,11 +253,11 @@ a %>%
 
 10. Construct a 95% confidence interval for the difference between the average weights of babies born to smoking and non-smoking mothers.
 
-```{r, eval = F}
-boot_means <- ncbirths_habitgiven %>%
-  specify(response = ___, explanatory = ___) %>%
-  generate(reps = 10000, type = "___") %>%
-  calculate(stat = "___", order = c("___", "___"))
+```{r}
+boot_means <- ncbirths_habitgiven%>%
+  specify(response = weight, explanatory = habit) %>%
+  generate(reps = 10000, type = "bootstrap") %>%
+  calculate(stat = "diff in means", order = c("nonsmoker", "smoker"))
 
 boot_means %>%
   summarize(lower_bound = quantile(stat, 0.025),
@@ -265,8 +265,8 @@ boot_means %>%
 
 ggplot(data = boot_means, aes(x = stat)) +
   geom_histogram() +
-  geom_vline(xintercept = ___, color = "red") +
-  geom_vline(xintercept = ___, color = "red")
+  geom_vline(xintercept = .210, color = "red") +
+  geom_vline(xintercept = .829, color = "red")
 
 # zero is outside the confidence interval: there is a difference
 ```
@@ -279,8 +279,8 @@ In this portion of the analysis we focus on two variables. The first one is `mat
 11. First, a non-inference task: Determine the age cutoff for younger and mature 
 mothers. Use a method of your choice, and explain how your method works.
 
-```{r, eval = F}
-ggplot(ncbirths_white, aes(x = ___, fill = ___)) + 
+```{r}
+ggplot(ncbirths_white, aes(x = mage, fill = mature)) + 
   geom_histogram() + 
   xlim(30, 40)
 ```
@@ -292,9 +292,9 @@ The other variable of interest is `lowbirthweight`.
 H0: the proportion of low birth weight babies is equal for mature and younger mothers
 Ha: the proportion of low birth weight babies is higher for mature mothers
 
-```{r, eval = F}
-ggplot(ncbirths, aes(fill = ___, x = ___)) + 
-  geom_bar(position = "___")
+```{r}
+ggplot(ncbirths, aes(fill = lowbirthweight, x = mature)) + 
+  geom_bar(position = "fill")
 
 m2 <- ncbirths %>%
   count(lowbirthweight, mature) %>%
@@ -306,18 +306,18 @@ levels(ncbirths$lowbirthweight)
 levels(ncbirths$mature)
 
 boot_means <- ncbirths %>%
-  specify(response = ___, explanatory = ___, success = "___") %>%
-  hypothesize(null = "___") %>% 
-  generate(reps = 2000, type = "___") %>%
-  calculate(stat = "___", order = c("___", "___"))
+  specify(response = lowbirthweight, explanatory = mature, success = "low") %>%
+  hypothesize(null = "independence") %>% 
+  generate(reps = 2000, type = "permute") %>%
+  calculate(stat = "diff in props", order = c("mature mom", "younger mom"))
 
 ggplot(data = boot_means, aes(x = stat)) +
   geom_bar() +
-  geom_vline(xintercept = ___, color = "red") +
-  geom_vline(xintercept = ___, color = "red")
+  geom_vline(xintercept = -.0281, color = "red") +
+  geom_vline(xintercept = .0281, color = "red")
 
 a <- boot_means %>%
-  filter(stat <= -___) 
+  filter(stat <= -.0281) 
 nrow(a)
 a %>%
   summarise(p_value = n() / 2000)
@@ -326,9 +326,9 @@ a %>%
 
 # calculate bootstrap (altough not necessary)
 boot_means_str <- ncbirths %>%
-  specify(response = ___, explanatory = ___, success = "___") %>%
+  specify(response = lowbirthweight, explanatory = mature, success = "low") %>%
   generate(reps = 2000, type = "bootstrap") %>%
-  calculate(stat = "___", order = c("___", "___"))
+  calculate(stat = "diff in props", order = c("mature mom", "younger mom"))
 mean(boot_means_str$stat)
 boot_means_str %>%
   summarize(lower_bound = quantile(stat, 0.025),
@@ -336,8 +336,8 @@ boot_means_str %>%
 
 ggplot(data = boot_means_str, aes(x = stat)) +
   geom_histogram() +
-  geom_vline(xintercept = ___, color = "red") +
-  geom_vline(xintercept = ___, color = "red")
+  geom_vline(xintercept = -.0336, color = "red") +
+  geom_vline(xintercept = .0897, color = "red")
 
 # zero is within the confidence interval, so no significant difference in lowbirthweight for mature moms
 
