@@ -171,8 +171,6 @@
 	- [Russel Poldrack: Chapter 15 (comparing groups)](https://statsthinking21.github.io/statsthinking21-core-site/comparing-means.html)
 	- Jan Vanhove: Chapters 12, 13
 	- Jan Vanhove: Teil III
-- Present final project
-	- Only for those who choose to do a Modulpruefung
 - Datacamp:
 	- [Inference for Linear Regression in R](https://learn.datacamp.com/courses/inference-for-linear-regression-in-r) (optional)
 	- Modeling with Data in the Tidyverse (optional)
