@@ -183,6 +183,8 @@
 	- Multiple and Logistic Regression in R (optional)
 	- Communicating with Data in the Tidyverse
 
-
 ## Modulpruefung
-	- Reproducible report assignment
+- Modulpruefung
+	- [Reproducible report assignment using the STEX data](https://jobschepens.github.io/EW-M7E4/exams/pruefung/exam.html), [starter Rmd file](
+	  https://github.com/jobschepens/EW-M7E4/blob/master/exams/pruefung/exam.Rmd), [starter Word docx file](
+	  https://github.com/jobschepens/EW-M7E4/blob/master/exams/pruefung/exam.docx). 

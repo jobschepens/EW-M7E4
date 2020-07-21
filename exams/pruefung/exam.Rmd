@@ -1,0 +1,48 @@
+---
+title: "Modulpruefung Template"
+subtitle: "TU Dortmund SoSe20 - Exploratory Data Analysis"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+author: "Job Schepens (change here)"
+output: 
+  html_document:
+    highlight: haddock
+    toc: no
+    fig_height: 4
+    fig_width: 7
+  word_document: 
+    toc: yes
+fontsize: 11pt
+geometry: margin=.5in
+lang: eng
+---
+
+This is a starter file that you can use to start writing your R code in. When you click on the Knit button, RStudio generates a HTML file as well as a Word docx file. A reproducible workflow would be to build up your analysis and visualizations here and then also write your report here in plain text format. You can make things *bold* or **italics** using the functionality of R Markdown. You can find an R Markdown cheatsheet [here](https://raw.githubusercontent.com/rstudio/cheatsheets/master/rmarkdown-2.0.pdf) or within RStudio under Help - Cheatsheets - R Markdown. You can also copy and paste from R into Word if you prefer that. 
+
+## Introduction
+
+Write your introduction here. What's the topic, why is it interesting, why should we study it, what are the aims and research questions of this "study", what is the null hypothesis, what is the research hypothesis? what is the research approach (empirical, quantitative, observational, large-scale)? 
+
+
+## Methods 
+
+Short description of participants, materials, procedures (e.g. language test, questionnaire), statistical analysis design (e.g. linear regression using R). Describe all of the variables you are analyzing in terms of how they are measured. 
+
+## Results
+
+1. Report exploratory analysis of all of the variables you are analyzing in terms of their summary statistics and consider including visualizations of their distribution or their relation (boxplots or a scatterplot). You can leave the code in your document. For example: 
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+stex <- read.csv("stex.csv")
+stex %>% 
+  ggplot(aes(x = AaA)) + 
+  geom_histogram(binwidth = 1)
+```
+
+
+2. Report "confirmatory" analysis of "null hypothesis significance testing" (your linear regression model with its fitted coefficients) and interpret their meaning. 
+
+
+## Discussion
+
+Summarize your findings, critically discuss important limitations of your study, critically discuss implications or contributions of your study, critically discuss new directions for future research, critically discuss practical consequences. 
